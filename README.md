@@ -1,58 +1,64 @@
 # Newsdesk
 
-Newsdesk 是在本机浏览器中使用的新闻写作工作台。一个项目可以存放素材、检索记录和多篇稿件。可以从代表作中提取个人文风，按所选材料生成文章，也可以对单个段落提出修改并审阅差异。界面支持英语、西语、法语、中文、日语和韩语。
+**English** · [简体中文](README.zh-CN.md)
 
-## 平台支持
+Newsdesk is a local writing workspace for journalists. Keep sources, research notes and drafts together in a project on your Mac. Search for reporting material or import your own, choose a writing style or extract one from samples, then draft a story and review suggested edits one passage at a time.
 
-本版本以源码形式运行，已在 Apple Silicon Mac 上完成本机验证。Intel Mac 和 Windows x64 是 Docker 版的目标平台，尚待适配和验收。当前仓库提供 [Docker 适配说明](docs/DOCKER-HANDOFF.md)，正式镜像和一键启动配置待发布。
+## Run on a Mac
 
-Newsdesk 面向单人本机使用。写作和检索评分需要用户配置兼容的模型服务。
+The source build has been tested on **Apple Silicon** with Node.js 24.21.0. Intel Mac users can try the same steps with Intel-compatible tools. That configuration still needs testing.
 
-## 本机启动
+### First launch
 
-以下命令适用于 macOS 的终端。在含有本 README 和 `package.json` 的目录执行。需要 Node.js 22.13 或更高版本、npm、uv、tar，以及首次安装所需的网络。用 `node -v` 和 `uv --version` 确认环境。Apple Silicon 是本版已本机验证的平台。开发依赖的安装说明见 [Node.js](https://nodejs.org/) 和 [uv](https://docs.astral.sh/uv/getting-started/installation/)。
+1. Install Node.js 22.13 or later with npm, and install uv. Open a new Terminal window and check that each command below prints a version. macOS also needs its standard `tar` utility. [Node.js downloads](https://nodejs.org/en/download) · [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/)
 
-```sh
-npm ci
-SEARCH_UV="$(command -v uv)" npm run setup:search
-npm start
-```
+   ```sh
+   node -v
+   npm -v
+   uv --version
+   ```
 
-打开 **[本地 Newsdesk](http://127.0.0.1:43219/)**。如已有实例占用端口，使用 `PORT=43220 npm start` 并打开对应端口。用 Ctrl+C 退出，Newsdesk 会停止自己的搜索进程。搜索运行环境生成在 `.runtime/search/`，首次安装会下载 SearXNG 和 Python 依赖，之后可以复用。
+2. On this repository's GitHub page, choose **Code → Download ZIP**, then unzip it in Finder. In Terminal, type `cd` followed by a space, drag the extracted folder into the window and press Return. The folder should contain `package.json`.
 
-## 第一次使用
+3. Run these commands in order. The first two need internet access. They install the app dependencies and set up the built-in SearXNG search service and its Python environment.
 
-1. 在「设置 → 模型」填写兼容 Chat Completions 的 API 根地址、模型名称和可选密钥。本机服务的示例地址是 `http://127.0.0.1:1234/v1`。模型由用户提供。连通性检测会访问该地址。
-2. 创建项目，上传或粘贴已有素材，或在 Research 输入选题。应用默认用内置 SearXNG 搜索，由模型改写查询、评估相关性。可读取的结果能直接加入项目素材库。网络、模型或上游搜索源异常时，查看对应阶段的状态。
-3. 在写作页勾选素材，选择文风与输出语言，再输入写作要求。编辑器支持局部修改和稿件导出。自动读取依赖脚本渲染的网页需要本机 Chrome 或 Chromium，必要时用 `NEWSROOM_BROWSER_PATH` 指向浏览器可执行文件。
+   ```sh
+   npm ci
+   SEARCH_UV="$(command -v uv)" npm run setup:search
+   npm start
+   ```
 
-## 存储、备份与联网范围
+4. Open [Newsdesk on this Mac](http://127.0.0.1:43219/) in your browser. Keep Terminal open while you work.
 
-所有项目、稿件和文风默认自动保存到 `~/Documents/Newsdesk/Newsdesk.newsdesk`，这是一个带格式版本的 SQLite 文件。设置中的「本地存储」可更改文件夹。「备份历史」支持手动备份和整库恢复。备份位于资料库旁的 `Newsdesk Backups/`。恢复前会保存当前库的快照。更改位置会复制并校验当前库，原目录中的库与旧备份会保留。迁移到另一台电脑前请先停止服务，再复制资料库及需要保留的备份。
+### Open it again
 
-API 密钥按服务地址保存在当前浏览器的本地存储中。清除浏览器数据可能需要重新配置密钥。配置远程模型后，任务所需的提示词、选择的材料、稿件上下文或文风样例会发给该服务。检索查询和正文读取也会联网。新建测试资料库或备份生产库之前，先核对数据目录。
+In the same project folder, run `npm start` and open the local address above. To stop the app and its search service, press **Control-C** in Terminal. Closing the browser tab leaves the service running.
 
-## 验证
+## Try your first story
 
-```sh
-npm test
-npm run verify:ux
-```
+1. **Connect a model.** Under **Settings → Models**, enter the API base URL, model ID and API key if your provider requires one. Newsdesk uses a Chat Completions-compatible service that you supply. If your model server is running on this Mac at port 1234, its base URL might be `http://127.0.0.1:1234/v1`. Use the connection test to check your settings.
+2. **Collect material.** Create a project. In **Source library**, upload a document or paste your notes. In **Research**, enter a topic to find more material. Review a result and add it to the library. Research uses your model to rewrite queries and score results.
+3. **Write and revise.** Open **Write**, select the sources, writing style and output language, describe the story and run the task. Select a passage in the draft to request an edit and compare it before accepting. To check autosave, reopen the project after restarting Newsdesk.
 
-第一条运行单元与集成测试。第二条需要安装 Google Chrome，使用临时资料库实测浏览器中的编辑、保存失败恢复、备份、还原、目录切换及文章导出。模型相关测试使用测试响应。手动验证搜索时，打开设置中的搜索连接测试，并确认返回实际搜索结果。验证真实模型则需自行配置服务。
+The interface supports English, Spanish, French, Simplified Chinese, Japanese and Korean.
 
-## 仓库入口
+## Storage, backups and privacy
 
-| 路径 | 用途 |
+All projects share one local SQLite library. The default file is `~/Documents/Newsdesk/Newsdesk.newsdesk`. Use **Settings → System → Local storage** to change the folder. **Backup history** lets you back up or restore the whole library. Backups are in the adjacent `Newsdesk Backups/` folder. Restoring creates a snapshot of the current library first. To move to another Mac, stop Newsdesk before copying the library and the backups you want to keep.
+
+API keys are stored in the current browser and may need to be entered again if you clear its data. Online searches send queries to search providers and request pages from source websites. When you run a remote model task, the configured service receives the prompt and the material needed for that task, such as selected sources, draft context or writing samples.
+
+## Troubleshooting
+
+| What you see | What to do |
 | --- | --- |
-| `server.mjs`、`generation.mjs` | 本地 HTTP、静态页面、模型请求 |
-| `library*.mjs`、`public/library-*.js` | 资料库读写、版本校验、自动保存与恢复 |
-| `research.mjs`、`search-service.mjs` | 检索、评分、搜索进程管理 |
-| `website*.mjs`、`source-import.mjs` | 网页与文档正文提取 |
-| `public/`、`scripts/`、`test/` | 界面、开发脚本、回归测试 |
+| Terminal cannot find `node`, `npm` or `uv` | Install the missing prerequisite, reopen Terminal, then repeat the version checks. |
+| The local page does not open | Check that `npm start` is still running. If the port is in use, run `PORT=43220 npm start` and open [port 43220](http://127.0.0.1:43220/). |
+| Built-in search fails to start | Rerun the `setup:search` command above in the project folder. If the worker starts and fails, check `.runtime/search/service.log`. |
+| A result opens but its article text cannot be imported | Dynamic pages may require Chrome or Chromium on the Mac. For a custom installation, set `NEWSROOM_BROWSER_PATH` to the browser executable before starting Newsdesk. You can also open the original article and paste its text. |
 
-详细测试环境、实测结果及已知限制见[验证记录](docs/VERIFICATION.md)。
+## Development and license
 
-## 许可证
+Run `npm test` for unit and integration tests. With Google Chrome installed, run `npm run verify:ux` for browser checks using a temporary library. [Verification record](docs/VERIFICATION.md)
 
-Newsdesk 自有代码采用 [MIT 许可证](LICENSE)。SearXNG、字体、图标、壁纸及其他依赖分别遵循各自的许可条款，见[第三方说明](THIRD-PARTY-NOTICES.md)。
+Newsdesk's own code is available under the [MIT License](LICENSE). Bundled assets and third-party components have their own terms. [Third-party notices](THIRD-PARTY-NOTICES.md)
