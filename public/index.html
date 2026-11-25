@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" data-wallpaper="dunes"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Newsdesk</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/workspace.css"><link href="/writing.css?v=20261105-starts2" rel="stylesheet"><link href="/alpine.css?v=20261105-a" rel="stylesheet"><link rel="stylesheet" href="/liquid.css?v=20261106"><link rel="stylesheet" href="/themes.css?v=20261106"><link rel="stylesheet" href="/polish.css?v=20261106"><link rel="stylesheet" href="/editor-comments.css?v=20261106"><link rel="stylesheet" href="/research.css"></head>
+<body><dialog id="libraryRecovery"><h2></h2><p role="alert"></p><div class="row"><button></button><button></button><button></button></div></dialog><section id="libraryProblem" hidden role="alert"><span id="libraryProblemText"></span> <button id="libraryRetry" data-i18n="libraryRetry"></button> <button id="libraryRescue" data-i18n="libraryRescue"></button></section><a id="skipToContent" class="skip-link" href="#homeView" data-i18n="skipToContent"></a><div class="app-shell"><nav class="app-rail"><a class="rail-brand" href="#home" aria-label="Newsdesk"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h10l4 4v14H5z" /><path d="M14 3v5h5M8 12h8M8 16h5" /></svg></span><span>Newsdesk<small data-i18n="brandSubtitle"></small></span></a><button id="newProjectRail" class="rail-create"><span>＋</span><b data-i18n="newProject"></b></button><div class="rail-links"><button data-view="home" class="active"><span>⌂</span><b data-i18n="home"></b></button><button data-view="projects"><span>▤</span><b data-i18n="projects"></b></button><button data-view="styles"><span>◈</span><b data-i18n="stylesNav"></b></button><button data-view="outputs"><span>▧</span><b data-i18n="outputs"></b></button></div><div class="rail-projects"><p data-i18n="recentProjects"></p><div id="railProjects"></div></div><div class="rail-bottom"><div class="local-indicator"><i></i><span data-i18n="localWorkspace"></span></div><button id="railSettings"><span>⚙</span><b data-i18n="settings"></b></button></div></nav><div class="app-content"><header id="workspaceHeader"><a class="workspace-brand" href="#home" aria-label="Newsdesk home" data-aria-i18n="brandHome">Newsdesk</a><nav class="workspace-navigation" aria-label="Workspace" data-aria-i18n="workspaceNavigation"><button data-view="home" data-i18n="home"></button><button data-view="projects" data-i18n="projects"></button><button data-view="styles" data-i18n="stylesNav"></button><button data-view="outputs" data-i18n="outputs"></button></nav><div class="breadcrumb"><span data-i18n="workspace"></span><span>/</span><strong id="pageLabel"></strong></div><div id="workspaceActions" class="header-right"><button type="button" id="homeModelStatus" class="home-model-status icon-button" aria-describedby="homeModelDetails" aria-haspopup="dialog" data-state="disconnected"><i aria-hidden="true"></i><span id="homeModelDetails" class="home-model-copy" role="tooltip"><span id="homeModelName"></span><span id="homeModelState" role="status" aria-live="polite"></span></span></button><button id="workspaceSettings" class="icon-button" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065" /><path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg></button><span id="saved" class="muted"></span></div></header><section id="homeView" class="page-view dashboard"><div class="dashboard-heading"><div id="homeToolbar" class="field-nav"><a href="#home" class="field-brand">Newsdesk</a><nav aria-label="Workspace" data-aria-i18n="workspaceNavigation"><button data-view="home" data-i18n="home" class="active"></button><button data-view="projects" data-i18n="projects"></button><button data-view="styles" data-i18n="stylesNav"></button><button data-view="outputs" data-i18n="outputs"></button></nav></div><div class="field-today"><div class="field-intro"><time aria-label="Current time" data-aria-i18n="currentTimeLabel" class="field-clock" id="homeClock"></time><p id="today" class="quiet"></p></div></div></div><div class="dashboard-grid"><section class="quick-panel home-start-stack">
+<button type="button" id="homeStartWriting" class="home-start-project"><span class="setup-method-icon" data-icon="file-text" aria-hidden="true"></span><b data-i18n="homeStartWriting"></b><span class="home-action-arrow" aria-hidden="true">↗</span></button>
+<button type="button" id="homeGenerateStyle" class="home-start-project" aria-haspopup="dialog"><span class="setup-method-icon" data-icon="palette" aria-hidden="true"></span><b data-i18n="homeGenerateStyle"></b><span class="home-action-arrow" aria-hidden="true">↗</span></button></section><section class="continue-panel"><div class="panel-heading"><h2 data-i18n="continueProjects"></h2><button data-go="projects" class="text-button" data-i18n="allProjects"></button></div><div id="homeProjects"></div></section></div><section class="bottom-note"><div class="workspace-summary"><p data-i18n="workspaceOverview"></p><div class="summary-counts"><div><strong id="projectTotal">0</strong><span id="projectTotalLabel"></span></div><div><strong id="sourceTotal">0</strong><span id="sourceTotalLabel"></span></div></div></div></section></section>
+<section id="projectsView" class="page-view" hidden>
+  <div class="page-heading project-toolbar">
+    <h1 data-i18n="projects"></h1>
+    <div class="project-toolbar-controls">
+      <div class="project-view-toggle" role="group" aria-label="Project view" data-aria-i18n="projectViewLabel"><button id="projectsListView" class="project-view-button" aria-label="List view" data-aria-i18n="listViewLabel" title="List view"><span class="view-list-icon" aria-hidden="true"></span></button><button id="projectsGridView" class="project-view-button" aria-label="Grid view" data-aria-i18n="gridViewLabel" title="Grid view"><span class="view-grid-icon" aria-hidden="true"></span></button></div><select id="projectSort" aria-label="Sort projects" data-aria-i18n="sortProjectsLabel"><option value="updated" data-i18n="sortUpdated"></option><option value="created" data-i18n="sortCreated"></option><option value="name" data-i18n="sortName"></option></select>
+      <button id="newProjectButton" type="button" class="aux-icon-button" data-icon="plus" aria-label="New project"></button>
+      <details id="deletedProjects" class="icon-popover">
+        <summary id="deletedProjectsLabel" class="aux-icon-button" data-icon="trash" aria-label="Deleted projects"></summary>
+        <div class="trash-popover">
+          <h2 id="deletedProjectsHeading" class="project-trash-heading"></h2>
+          <div id="deletedProjectsList"></div>
+        </div>
+      </details>
+    </div>
+  </div>
+  <div id="projectList" class="project-list"></div>
+</section>
+<section id="projectView" class="page-view project-view" hidden><div class="project-top"><div><button id="backProjects" class="text-button" data-i18n="backProjects"></button><input id="projectName" aria-label="Project name" data-aria-i18n="projectNameLabel"></div></div><nav class="project-tabs" aria-label="Project" data-aria-i18n="projectNavigation"><button data-project-tab="writing" class="active"><span class="setup-method-icon" data-icon="file-text"></span><span data-i18n="writeTab"></span></button><button data-project-tab="library"><span class="setup-method-icon" data-icon="folder"></span><span id="projectLibraryTabLabel" data-i18n="sourceLibrary"></span></button><button data-project-tab="research"><span class="setup-method-icon" data-icon="search"></span><span id="projectResearchTabLabel" data-i18n="research"></span></button></nav>
+<section id="projectResearch" aria-labelledby="projectResearchTabLabel" hidden><div id="projectResearchMount"></div></section><section id="projectLibrary" aria-labelledby="projectLibraryTabLabel" hidden><section hidden class="personal-articles"><div class="panel-heading"><div><h2 data-i18n="personalArticles"></h2><p class="small muted" data-i18n="personalArticlesHint"></p></div><button id="uploadDraft"><span>▤</span><b data-i18n="importArticle"></b><small>TXT / Markdown</small></button></div><div id="importedArticleList"></div></section><div class="source-library-toolbar"><details id="deletedSources" class="icon-popover">
+        <summary id="deletedSourcesLabel" class="aux-icon-button" data-icon="trash" aria-label="Deleted sources"></summary>
+        <div class="trash-popover">
+          <h2 id="deletedSourcesHeading" class="project-trash-heading"></h2>
+          <div id="deletedSourcesList"></div>
+        </div>
+      </details></div>
+<div class="library-imports">
+  <button id="addSource" type="button"><span aria-hidden="true"></span><b data-i18n="pasteSourceAction"></b></button>
+  <button id="uploadSources" type="button"><span aria-hidden="true"></span><b data-i18n="uploadFilesAction"></b></button>
+  <button id="addWebsite" type="button"><span aria-hidden="true"></span><b data-i18n="addLinkAction"></b></button>
+</div><input type="file" id="articleFile" accept=".txt,.md,.markdown,text/plain,text/markdown"><input type="file" id="importFile" accept=".txt,.md,.csv,.json,.doc,.docx,.pdf,.ppt,.pptx"><textarea id="materials" hidden aria-hidden="true"></textarea><hr class="source-divider"><div id="sourceList"></div></section>
+<section id="projectExport" hidden><div class="page-heading"><div><h2 data-i18n="export"></h2><p class="page-description" data-i18n="exportHint"></p></div><button id="projectExportButton" class="primary" data-i18n="export"></button></div><div class="export-preview"><p class="quiet" data-i18n="preview"></p><h2 id="exportTitle"></h2><div id="exportBody"></div></div></section>
+<main id="writingWorkspace">
+<div class="writing-tabbar"><div id="writingTabs" role="tablist" aria-label="Articles" data-aria-i18n="articleTabs"></div><button id="addWritingTab" type="button" class="aux-icon-button" data-icon="plus" aria-label="New article"></button><details id="deletedWritings" class="icon-popover">
+        <summary id="deletedWritingsLabel" class="aux-icon-button" data-icon="trash" aria-label="Deleted articles"></summary>
+        <div class="trash-popover">
+          <h2 id="deletedWritingsHeading" class="project-trash-heading"></h2>
+          <div id="deletedWritingsList"></div>
+        </div>
+      </details></div>
+<section class="writing writing-v2">
+<div id="writingEntry" class="writing-entry"><button id="freeExplore" class="active" data-i18n="freeExplore"></button><button id="startImported" data-i18n="startImported" hidden></button><div id="importedChoices" hidden></div></div>
+<section id="writingConversation" class="writing-conversation" hidden aria-live="polite"></section><div id="composer" class="composer">
+<div class="composer-welcome"><span class="composer-symbol" aria-hidden="true"></span><h2 data-i18n="exploreTitle"></h2><p data-i18n="exploreHint"></p></div><section id="annotationPanel" class="annotation-panel" hidden><div class="task-strip"><div id="annotationList" role="tablist" aria-label="Editing tasks" data-aria-i18n="editingTasksLabel"></div><button id="runAnnotations" class="text-button"></button></div><div id="annotationContext" hidden><div class="task-context-heading"><details id="annotationPassage" open><summary data-i18n="selectedPassage"></summary><blockquote id="annotationQuote"></blockquote></details><button id="removeCurrentAnnotation" class="text-button" data-i18n="removeAnnotation"></button></div><p id="annotationError" class="error" hidden></p></div></section>
+<textarea id="brief" data-placeholder="composerHint" aria-label="Writing brief"></textarea><div hidden id="annotationReview"><p class="task-result-label" data-i18n="suggestion"></p><p id="annotationResult" class="annotation-output"></p><div class="row"><button id="acceptCurrentAnnotation" class="primary" data-i18n="applyAnnotation"></button><button id="dismissCurrentAnnotation" data-i18n="dismiss"></button><button id="retryCurrentAnnotation" data-i18n="run"></button></div></div>
+<div class="composer-options"><label class="composer-select"><span data-i18n="style"></span><select id="style"></select></label><label class="composer-select" hidden><span data-i18n="writingAction"></span><select id="writingAction"><option data-i18n="continueWriting" value="continue"></option><option value="draft" data-i18n="fullGeneration"></option><option value="summary" data-i18n="summary"></option><option value="outline" data-i18n="outline"></option><option value="polish" data-i18n="polish"></option><option value="shorten" data-i18n="shorten"></option><option value="rewrite" data-i18n="paragraphRewrite"></option></select></label>
+<details id="sourcePicker" class="source-picker">
+  <summary id="sourcePickerSummary"></summary>
+  <div class="source-picker-panel">
+    <div class="source-picker-search">
+      <span class="setup-method-icon" data-icon="search" aria-hidden="true"></span>
+      <input type="search" id="sourceSearch" data-placeholder="sourcePickerSearch" autocomplete="off">
+    </div>
+    <div id="sourceOptions"></div>
+    <div id="sourcePickerActions" hidden>
+      <button id="selectAllSources" type="button" class="text-button" data-i18n="selectAllSources"></button>
+      <button id="clearSources" type="button" class="text-button" data-i18n="clearSources"></button>
+    </div>
+  </div>
+</details>
+<label class="composer-select language-select"><span data-i18n="outputLanguage"></span><select id="outputLanguage"><option value="en" lang="en">English</option><option value="es" lang="es">Español</option><option value="fr" lang="fr">Français</option><option value="zh" lang="zh">简体中文</option><option value="ja" lang="ja">日本語</option><option value="ko" lang="ko">한국어</option></select></label>
+<div class="composer-actions">
+  <button id="openDraftUpload" type="button" class="aux-icon-button" data-icon="upload" aria-label="Upload a draft" aria-haspopup="dialog"></button>
+  <button type="button" id="openNegativePrompt" class="aux-icon-button" aria-label="Negative prompt" data-aria-i18n="negativePromptLabel" title="Negative prompt" aria-haspopup="dialog"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 16c1-3 7-3 8 0M8 9h.01M16 9h.01"/></svg></button>
+  <button id="customRun" class="primary" data-task="draft" data-i18n="run"></button>
+  <button type="button" id="cancelGeneration" class="primary" hidden><span aria-hidden="true" class="stop-symbol"></span><span data-i18n="stopGeneration"></span></button>
+</div>
+</div>
+<input id="negativePrompt" type="hidden">
+</div>
+
+<section id="modelActivity" class="editor-task-status" hidden aria-labelledby="modelActivityText">
+<ol id="writingSteps" class="research-steps"></ol>
+<div class="editor-task-heading"><div class="editor-task-copy"><strong id="modelActivityText" role="status" aria-live="polite"></strong><span id="editorTaskTiming" class="small muted"></span></div></div><div id="editorTaskError" class="editor-task-error" hidden><code id="editorTaskErrorCode" hidden></code><p id="editorTaskErrorMessage"></p><details id="editorTaskDetails" hidden><summary data-i18n="technicalDetails"></summary><p id="editorTaskErrorDetail"></p></details></div><div id="editorTaskActions" class="editor-task-actions" hidden><button type="button" id="editorTaskRetry" data-i18n="retryTask"></button><button type="button" id="editorTaskSettings" class="aux-icon-button" data-icon="settings" aria-label="Model settings" data-aria-i18n="modelSettings"></button></div></section>
+<div id="editorLayout"><div id="reviewSpread"><div id="documentArea" hidden>
+<div class="section-heading"><div><h1 data-i18n="editor"></h1></div><div class="row"><button id="markdownToggle" class="markdown-toggle" aria-pressed="false">Markdown</button><input id="markdownMode" type="hidden" value="off"><button hidden id="reviewButton" aria-expanded="false"><span data-i18n="review"></span><i id="issueCount"></i></button><button id="writingExport" data-i18n="export"></button></div></div>
+<section id="generationPreview" class="generation-preview" hidden aria-live="polite"><p id="generationPreviewStatus" class="small muted"></p><h3 id="generationPreviewTitle"></h3><div id="generationPreviewBody"></div></section><div id="editorFields"><p id="originalLabel" class="original-label"></p><input id="title" class="title" data-placeholder="titleHint"><textarea id="article" class="article" data-placeholder="articleHint" spellcheck="true"></textarea>
+<div id="selectionTools" class="selection-tools" hidden><button id="addAnnotation" class="primary" data-i18n="addAnnotation" hidden></button><span id="selectionHint" class="small muted" data-i18n="annotationHint"></span></div>
+<div class="editor-footer"><div class="editor-save-status"><span id="libraryEditorStatus" class="small muted" role="status"></span>
+<div id="editorSaveProblem" hidden><span id="editorSaveReason" class="small"></span> <button type="button" id="editorSaveRetry" data-i18n="libraryRetry"></button> <button type="button" id="editorSaveCopy" data-i18n="libraryRescue"></button></div></div><span hidden id="articleNameHint" class="small muted" data-i18n="autosaveWriting"></span><div class="row"><button id="undo" data-i18n="undo"></button><button id="redo" data-i18n="redo"></button></div></div>
+</div></div><section class="review" id="reviewDrawer" hidden aria-label="Review" data-aria-i18n="review"><div class="section-heading"><div><h2 data-i18n="review"></h2></div><div class="row"><span id="scope" class="badge"></span><button id="closeReview" aria-label="Close review" data-aria-i18n="closeDialog">✕</button></div></div><button data-task="check" class="wide" data-i18n="check"></button><p class="small muted" data-i18n="reportNote"></p><div id="issues"></div><div id="status" role="status" aria-live="polite"></div><div id="empty" class="empty"><span>⌁</span><h3 data-i18n="emptyTitle"></h3><p data-i18n="emptyHint"></p></div><div id="resultPanel" hidden><div class="tabs"><button id="previewTab" class="active" data-i18n="suggestion"></button><button id="diffTab" data-i18n="comparison"></button></div><p hidden class="proposed-title" id="proposedTitle"></p><textarea id="result" aria-label="AI suggestion" data-aria-i18n="suggestion"></textarea><div id="diff" hidden></div><div class="review-actions"><button id="accept" class="primary" data-i18n="accept"></button><button id="discard" data-i18n="discard"></button></div><p class="small muted" data-i18n="reviewNote"></p></div></section></div><aside id="changeComments" class="change-comments" hidden aria-label="Suggested edits" data-aria-i18n="changeComments"></aside></div>
+<div id="legacyWritingControls" hidden><details id="writingControls"><summary id="controlSummary"></summary><textarea id="styleRules"></textarea><textarea id="reference"></textarea><input id="referenceFile" type="file"><input id="styleName"><button id="saveStyle"></button><select id="savedStyles"></select><button id="useStyle"></button><input id="instruction"></details></div>
+</section></main></section><section id="stylesView" class="page-view" hidden><div class="page-heading"><div><h1 data-i18n="styleLibrary"></h1></div><div class="row styles-actions"><div class="project-view-toggle" role="group" aria-label="Style view" data-aria-i18n="styleViewLabel"><button id="stylesListView" class="project-view-button" aria-label="List view" data-aria-i18n="listViewLabel" title="List view"><span class="view-list-icon" aria-hidden="true"></span></button><button id="stylesGridView" class="project-view-button" aria-label="Grid view" data-aria-i18n="gridViewLabel" title="Grid view"><span class="view-grid-icon" aria-hidden="true"></span></button></div><button id="createStyle" type="button" class="aux-icon-button" data-icon="plus" aria-label="Create personal style"></button><details id="deletedStyles" class="icon-popover">
+        <summary id="deletedStylesLabel" class="aux-icon-button" data-icon="trash" aria-label="Deleted styles"></summary>
+        <div class="trash-popover">
+          <h2 id="deletedStylesHeading" class="project-trash-heading"></h2>
+          <div id="deletedStylesList"></div>
+        </div>
+      </details></div><button data-i18n="returnToWriting" hidden class="text-button" id="returnToWriting"></button></div><h2 class="list-heading" data-i18n="personalStyles"></h2><div id="personalStyleList" class="style-grid"></div><h2 class="list-heading" data-i18n="presetStyles"></h2><div id="presetStyles" class="style-grid"></div></section><section id="outputsView" class="page-view" hidden><div class="page-heading"><div><h1 data-i18n="outputs"></h1></div></div><div class="asset-filters"><div id="assetTypes" class="type-filters"></div><div class="date-filters">
+  <div class="date-filter">
+    <span id="assetFromLabel" data-i18n="fromDate"></span>
+    <input id="assetFrom" type="hidden">
+    <button id="assetFromButton" class="asset-date-button" type="button" aria-haspopup="dialog" aria-labelledby="assetFromLabel assetFromDisplay">
+      <span id="assetFromDisplay"></span><span class="asset-date-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <div class="date-filter">
+    <span id="assetToLabel" data-i18n="toDate"></span>
+    <input id="assetTo" type="hidden">
+    <button id="assetToButton" class="asset-date-button" type="button" aria-haspopup="dialog" aria-labelledby="assetToLabel assetToDisplay">
+      <span id="assetToDisplay"></span><span class="asset-date-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+  <button id="resetAssetFilters" type="button" class="text-button" data-i18n="resetFilters"></button>
+</div></div><p id="assetCount" class="small muted"></p><div id="outputList"></div></section></div></div>
+<dialog id="assetPreviewDialog" aria-labelledby="assetPreviewTitle">
+  <form method="dialog" class="section-heading">
+    <h2 id="assetPreviewTitle"></h2>
+    <button type="submit" aria-labelledby="closeAssetPreviewLabel"><span aria-hidden="true">×</span><span id="closeAssetPreviewLabel" class="sr-only" data-i18n="closeSourcePreview"></span></button>
+  </form>
+  <p id="assetPreviewMeta" class="small muted"></p>
+  <div id="assetPreviewLink" hidden></div>
+  <p id="assetPreviewBody"></p>
+  <div class="row"><button id="assetPreviewDownload" type="button" data-i18n="download"></button></div>
+</dialog>
+<dialog id="assetDateDialog" aria-labelledby="assetDateTitle">
+  <form method="dialog" class="section-heading">
+    <h2 id="assetDateTitle"></h2>
+    <button type="submit" aria-labelledby="closeAssetDateLabel"><span aria-hidden="true">×</span><span id="closeAssetDateLabel" class="sr-only" data-i18n="closeDatePicker"></span></button>
+  </form>
+  <div class="asset-calendar-controls">
+    <button id="assetMonthPrevious" type="button" class="aux-icon-button" data-icon="chevron-left" aria-labelledby="assetMonthPreviousLabel"><span id="assetMonthPreviousLabel" class="sr-only" data-i18n="previousMonth"></span></button>
+    <label for="assetMonth" class="sr-only" data-i18n="calendarMonth"></label>
+    <select id="assetMonth"></select>
+    <label for="assetYear" class="sr-only" data-i18n="calendarYear"></label>
+    <input id="assetYear" type="number" min="1" max="9999" inputmode="numeric">
+    <button id="assetMonthNext" type="button" class="aux-icon-button" data-icon="chevron-left" aria-labelledby="assetMonthNextLabel"><span id="assetMonthNextLabel" class="sr-only" data-i18n="nextMonth"></span></button>
+  </div>
+  <div id="assetCalendarWeek" class="asset-calendar-grid" aria-hidden="true"></div>
+  <div id="assetCalendarDays" class="asset-calendar-grid" role="group" aria-labelledby="assetDateTitle"></div>
+  <div class="asset-calendar-actions">
+    <button id="assetClearDate" type="button" class="text-button" data-i18n="clearDate"></button>
+    <button id="assetToday" type="button" class="text-button" data-i18n="calendarToday"></button>
+  </div>
+</dialog>
+<dialog id="projectDialog" aria-labelledby="projectDialogTitle" aria-describedby="projectSetupProgress" data-step="1">
+  <div class="project-setup-header">
+    <span data-i18n="newProject"></span>
+    <button id="closeProjectDialog" class="project-setup-close" type="button">
+      <span aria-hidden="true">×</span><span class="sr-only" data-i18n="closeProjectSetup"></span>
+    </button>
+  </div>
+  <div class="project-setup-progress">
+    <span aria-hidden="true"></span><span aria-hidden="true"></span><small class="sr-only" id="projectSetupProgress" data-i18n="projectSetupFirstStep"></small>
+  </div>
+  <form id="projectForm" novalidate>
+    <h2 id="projectDialogTitle" data-i18n="projectSetupNameTitle"></h2>
+    <div class="project-setup-field">
+      <label class="sr-only" for="newProjectName" data-i18n="projectName"></label>
+      <input id="newProjectName" required maxlength="100" data-placeholder="projectSetupNameHint" aria-errormessage="projectSetupNameError" autocomplete="off" autofocus>
+      <p id="projectSetupNameError" role="alert" data-i18n="projectSetupNameError" hidden></p>
+    </div>
+    <div class="project-entry-actions">
+      <button type="submit" class="primary" data-i18n="projectSetupContinue"></button>
+    </div>
+  </form>
+  <section id="projectStartChoices" hidden>
+    <h2 id="projectStartChoicesTitle" tabindex="-1" data-i18n="projectSetupSourcesTitle"></h2>
+    <div class="project-setup-routes">
+      <button id="projectStartResearch" class="project-setup-route" type="button">
+        <span class="project-setup-icon" aria-hidden="true"><img src="/icons/search.svg" alt=""></span>
+        <span><strong data-i18n="projectSetupFindSources"></strong><small data-i18n="projectSetupFindHint"></small></span>
+        <img class="project-setup-arrow" src="/icons/arrow-right.svg" alt="">
+      </button>
+      <button id="projectStartLibrary" class="project-setup-route" type="button">
+        <span class="project-setup-icon" aria-hidden="true"><img src="/icons/upload.svg" alt=""></span>
+        <span><strong data-i18n="uploadSources"></strong><small data-i18n="projectSetupUploadHint"></small></span>
+        <img class="project-setup-arrow" src="/icons/arrow-right.svg" alt="">
+      </button>
+    </div>
+    <div class="project-entry-actions">
+      <button id="backToProjectName" type="button" data-i18n="projectSetupBack"></button>
+      <button id="projectStartWriting" class="text-button" type="button" data-i18n="projectSetupSkip"></button>
+    </div>
+  </section>
+</dialog>
+
+<dialog id="websiteDialog"><form id="websiteForm"><div class="section-heading"><h2 data-i18n="addWebsite"></h2><button type="button" id="closeWebsiteDialog" aria-label="Close" data-aria-i18n="closeDialog">✕</button></div><label for="websiteURL" data-i18n="websiteURL"></label><input id="websiteURL" type="url" required placeholder="https://example.com/article"><p class="small muted" data-i18n="websiteHint"></p><button id="fetchWebsite" class="wide" data-i18n="readWebsite"></button></form><div class="model-task-row"><div id="websiteTaskFeedback" class="model-task-feedback" hidden></div><button type="button" id="stopWebsiteReading" data-i18n="stopGeneration" hidden></button></div><p id="websiteStatus" class="small muted" role="status"></p><button type="button" id="websiteManual" class="wide" hidden data-i18n="materialFinish"></button><div id="websitePreview" hidden><label for="websiteTitle" data-i18n="sourceName"></label><input id="websiteTitle"><label for="websiteText" data-i18n="materials"></label><textarea id="websiteText"></textarea><button id="saveWebsite" class="primary wide" data-i18n="saveWebsite"></button></div></dialog><dialog id="materialImportDialog" aria-labelledby="materialImportHeading"><form id="materialImportForm"><div class="section-heading"><h2 id="materialImportHeading" data-i18n="materialFinish"></h2><button type="button" id="closeMaterialImport" aria-label="Close" data-aria-i18n="closeDialog">×</button></div><p id="materialImportReason" class="small muted" role="status"></p><a id="materialOriginal" target="_blank" rel="noopener noreferrer" data-i18n="researchOriginal"></a><p class="small muted" data-i18n="materialPasteHint"></p><label for="materialImportName" data-i18n="sourceName"></label><input id="materialImportName" required maxlength="250"><label for="materialImportText" data-i18n="materialBody"></label><textarea id="materialImportText" required></textarea><div class="row"><button type="button" id="materialRetry" data-i18n="materialRetry"></button></div><div class="model-task-row"><div id="materialTaskFeedback" class="model-task-feedback" hidden></div><button type="button" id="stopMaterialReading" data-i18n="stopGeneration" hidden></button></div><p id="materialImportStatus" role="status" class="small muted"></p><button id="materialImportSave" class="primary wide" data-i18n="saveWebsite"></button></form></dialog><dialog id="sourceDialog"><form id="sourceForm"><div class="section-heading"><h2 id="sourceDialogTitle" data-i18n="addSource"></h2><button type="button" id="closeSourceDialog" aria-label="Close" data-aria-i18n="closeDialog">✕</button></div><label for="sourceName" data-i18n="sourceName"></label><input id="sourceName" required maxlength="150"><label for="sourceText" data-i18n="materials"></label><textarea id="sourceText" required></textarea><button class="primary wide" data-i18n="saveSource"></button></form></dialog>
+<dialog id="styleDialog"><form method="dialog"><div class="section-heading"><h2 id="styleDialogTitle"></h2><button aria-label="Close" data-aria-i18n="closeDialog">✕</button></div></form><section id="styleReadView" hidden><h3 id="styleReadName"></h3><div id="styleReadPrompt" class="style-read-prompt"></div><details id="styleReadNegativeDetails" class="negative-prompt"><summary data-i18n="negativePromptLabel"></summary><div id="styleReadNegative" class="style-negative-read"></div></details><button type="button" id="editSavedStyle" class="primary" data-i18n="editSavedStyle"></button></section><div id="styleEditView"><label for="globalStyleName" data-i18n="styleName"></label><input id="globalStyleName"><div class="style-methods" role="tablist" aria-label="Prompt source" data-aria-i18n="promptSource"><button type="button" id="styleManualMode" role="tab" aria-selected="true" data-i18n="writeStylePrompt"></button><button type="button" id="styleSampleMode" role="tab" aria-selected="false" data-i18n="extractStylePrompt"></button></div><section id="styleSampleSection" hidden><p class="small muted" data-i18n="sampleToPromptHint"></p><div class="style-sample-methods"><button type="button" id="uploadStyleReference" class="setup-method"><span class="setup-method-icon" data-icon="upload"></span><span data-i18n="uploadStyleReference"></span></button><button type="button" id="pasteStyleSample" class="setup-method" aria-expanded="false"><span class="setup-method-icon" data-icon="file-text"></span><span data-i18n="setupTextChoice"></span></button></div><input id="styleReferenceFile" type="file" accept=".txt,.md,.csv,.json,.doc,.docx,.pdf,.ppt,.pptx" hidden><div id="stylePasteComposer" hidden><textarea id="globalReference" data-placeholder="referencePasteHint"></textarea><button type="button" id="savePastedStyleSample" data-i18n="saveSample"></button></div><section class="style-sample-results"><h4 data-i18n="addedSamples"></h4><div id="styleReferenceAttachments" class="style-reference-attachments"></div><p id="styleReferenceFileStatus" class="small muted" role="status"></p></section></section><details id="styleNegativeDetails" class="negative-prompt"><summary data-i18n="negativePromptLabel"></summary><label class="sr-only" for="globalStyleNegative" data-i18n="negativePromptLabel"></label><textarea id="globalStyleNegative" rows="3" data-placeholder="negativePromptHint"></textarea></details><button type="button" id="analyzeStyle" data-i18n="generateStylePrompt"></button>
+<div class="model-task-row"><div id="styleTaskFeedback" class="model-task-feedback" hidden></div><button type="button" id="stopStyleGeneration" data-i18n="stopGeneration" hidden></button></div><section id="stylePromptDetails" hidden><label for="globalStyleRules" data-i18n="styleRulesLabel"></label><p class="small muted" data-i18n="stylePromptHint"></p><textarea id="globalStyleRules" data-placeholder="stylePromptPlaceholder"></textarea></section>
+<div id="styleResultActions" class="style-save-actions" hidden>
+  <button type="button" id="regenerateStyle" data-i18n="regenerateStyle"></button>
+  <button type="button" id="saveGlobalStyle" class="primary" data-i18n="saveWritingStyle"></button>
+</div>
+<p id="styleAnalysisStatus" class="small muted" role="status"></p><button hidden data-i18n="deleteStyle" class="text-button" id="deleteStyle"></button><button type="button" id="cancelStyleEdit" class="aux-icon-button" data-icon="x" aria-label="Cancel editing" data-aria-i18n="cancelStyleEdit" title="Cancel editing" hidden></button></div></dialog>
+<dialog id="exportDialog"><form method="dialog"><div class="section-heading"><h2 data-i18n="export"></h2><button aria-label="Close" data-aria-i18n="closeDialog">✕</button></div></form><div class="export"><label data-i18n="export"></label><div class="row"><button id="copy" data-i18n="copy"></button><button id="exportTxt">TXT</button><button id="exportMd">Markdown</button><button id="exportWord">Word</button></div><p class="small muted" data-i18n="localNote"></p></div></dialog><div id="toast" role="status" aria-live="polite" hidden></div><dialog id="settings"><form method="dialog"><div class="section-heading"><h2 data-i18n="settings"></h2><button aria-label="Close" data-aria-i18n="closeDialog">✕</button></div></form><div class="settings-tabs" role="tablist" aria-label="Settings" data-aria-i18n="settings"><button id="systemSettingsTab" role="tab" type="button" aria-selected="true" aria-controls="systemSettingsPanel" data-i18n="systemSettings"></button><button id="modelSettingsTab" role="tab" type="button" aria-selected="false" aria-controls="modelSettingsPanel" data-i18n="modelSettings"></button></div><section id="systemSettingsPanel" role="tabpanel" aria-labelledby="systemSettingsTab"><div class="theme-settings"><h3><label for="themePreference" data-i18n="themePreference"></label></h3><select id="themePreference"><option value="system" data-i18n="themeSystem"></option><option value="light" data-i18n="themeLight"></option><option value="dark" data-i18n="themeDark"></option></select></div><div class="theme-settings"><h3><label for="settingsLanguage" data-i18n="interfaceLanguage"></label></h3><select id="settingsLanguage"><option value="en" lang="en">English</option><option value="es" lang="es">Español</option><option value="fr" lang="fr">Français</option><option value="zh" lang="zh">简体中文</option><option value="ja" lang="ja">日本語</option><option value="ko" lang="ko">한국어</option></select></div><section class="wallpaper-settings"><h3 id="wallpaperHeading" data-i18n="wallpaperHeading"></h3><div id="wallpaperChoices" class="wallpaper-choices" role="group" aria-labelledby="wallpaperHeading"></div><p class="wallpaper-note" data-i18n="wallpaperPaletteHint"></p></section><section class="glass-appearance"><div class="glass-appearance-heading"><div><h3 data-i18n="glassAppearance"></h3><p data-i18n="glassAppearanceHint"></p></div><output id="glassTransparencyValue" for="glassTransparency">100%</output></div><label class="sr-only" for="glassTransparency" data-i18n="glassTransparency"></label><input id="glassTransparency" type="range" min="0" max="100" step="1" value="100"><div class="glass-range-labels"><span data-i18n="glassSolid"></span><span data-i18n="glassClear"></span></div></section><section class="glass-appearance" id="librarySettings" aria-labelledby="libraryHeading">
+<h3 id="libraryHeading" data-i18n="libraryTitle"></h3>
+<div class="library-location">
+  <span class="library-icon library-folder-icon" aria-hidden="true"></span>
+  <div class="library-location-copy"><span data-i18n="libraryFolderLabel"></span><span id="libraryFile" dir="auto"></span></div>
+  <button type="button" id="libraryMove" data-i18n="libraryMove"></button>
+</div>
+<details id="libraryHistoryPanel">
+  <summary id="libraryHistory"><span class="library-icon library-clock-icon" aria-hidden="true"></span><span data-i18n="libraryHistory"></span></summary>
+  <div class="library-history-content">
+    <div id="libraryBackups"></div>
+    <button type="button" id="libraryBackup" data-i18n="libraryBackup"></button>
+  </div>
+</details>
+<p id="libraryFeedback" role="status" class="small"></p></section></section><section id="modelSettingsPanel" role="tabpanel" aria-labelledby="modelSettingsTab" hidden><div class="model-settings-grid"><section class="model-settings-block"><h3 data-i18n="languageModelHeading"></h3><label for="baseURL" data-i18n="modelAddressLabel"></label><input id="baseURL" placeholder="http://127.0.0.1:1234/v1"><p class="small muted" data-i18n="endpointHint"></p><label for="apiKey" data-i18n="modelKeyLabel"></label><input id="apiKey" type="password" autocomplete="off" placeholder="Optional"><label for="model" data-i18n="model"></label><div class="row"><input id="model" list="models" placeholder="local-model"><datalist id="models"></datalist><button id="loadModels" data-i18n="loadModels"></button></div><p id="connectionStatus" role="status"></p><p class="small muted" data-i18n="keyNote"></p></section><section class="model-settings-block search-settings"><h3 data-i18n="searchServiceHeading"></h3><p class="small muted" data-i18n="builtinSearchHint"></p><p id="builtinSearchStatus" class="search-service-status" role="status"></p><div class="row"><button type="button" id="testSearchConnection" data-i18n="testSearch"></button><button type="button" id="restartBuiltinSearch" data-i18n="restartSearch"></button></div><details class="search-external"><summary data-i18n="externalSearchSettings"></summary><label class="source-option"><input id="useExternalSearch" type="checkbox"><span data-i18n="useExternalSearch"></span></label><label for="searchURL" data-i18n="searchAddressLabel"></label><input id="searchURL" type="url" placeholder="http://127.0.0.1:8080"></details><p id="searchConnectionStatus" class="small muted" role="status"></p></section></div></section></dialog><script type="importmap">{"imports":{"marked":"/vendor/marked.js"}}</script><script type="module" src="/library-start.js"></script><div aria-live="polite" hidden class="generation-bar" id="generationBar"></div><dialog id="articleStart" aria-labelledby="draftUploadTitle">
+  <form method="dialog" class="section-heading">
+    <h2 id="draftUploadTitle" data-i18n="uploadDraft"></h2>
+    <button type="submit" aria-labelledby="closeDraftUploadLabel">
+      <span aria-hidden="true">×</span><span id="closeDraftUploadLabel" class="sr-only" data-i18n="closeDraftUpload"></span>
+    </button>
+  </form>
+  <label for="startingDraft" data-i18n="pasteDraft"></label>
+  <textarea id="startingDraft" rows="6" data-placeholder="pasteDraftHint" autofocus></textarea>
+  <p id="draftUploadError" role="alert" hidden></p>
+  <div class="row draft-upload-actions">
+    <button type="button" id="uploadStartingDraft" data-i18n="uploadDraftFile"></button>
+    <button type="button" id="editStartingDraft" class="primary" data-i18n="beginEditing"></button>
+  </div>
+  <section id="savedDraftOptions" hidden>
+    <h3 class="small" data-i18n="savedStartingPoints"></h3>
+    <div id="savedStartingPoints"></div>
+  </section>
+</dialog>
+<dialog id="renameWritingDialog"><form id="renameWritingForm"><div class="section-heading"><h2 data-i18n="renameTab"></h2><button type="button" id="cancelWritingRename" aria-label="Close" data-aria-i18n="closeDialog">×</button></div><label for="writingTabName" data-i18n="renameWriting"></label><input id="writingTabName" maxlength="100" required autocomplete="off"><p class="small muted" data-i18n="renameTabHint"></p><button class="primary wide" data-i18n="save"></button></form></dialog><dialog id="purgeDialog"><form method="dialog"><div class="section-heading"><h2 data-i18n="permanentDeleteTitle"></h2><button type="button" id="cancelPurgeX" aria-label="Close" data-aria-i18n="closeDialog">×</button></div></form><p id="purgeItemName" class="purge-item-name"></p><p id="purgeExplanation" class="small muted"></p><div class="purge-actions"><button type="button" id="cancelPurge" data-i18n="cancelPurge"></button><button type="button" id="confirmPurge" class="danger-button" data-i18n="permanentDelete"></button></div></dialog><script type="module" src="/glass-select.js"></script><dialog id="negativePromptDialog" aria-labelledby="negativePromptTitle"><form method="dialog"><div class="section-heading"><h2 id="negativePromptTitle" data-i18n="negativePromptLabel"></h2><button type="submit" aria-label="Close" data-aria-i18n="closeDialog">×</button></div></form><label class="sr-only" for="negativePromptDraft">Negative prompt</label><textarea id="negativePromptDraft" rows="5" data-placeholder="negativePromptHint"></textarea><div class="negative-dialog-actions"><button type="button" id="cancelNegativePrompt" data-i18n="negativeCancel"></button><button type="button" id="saveNegativePrompt" class="primary" data-i18n="negativeSave"></button></div></dialog>
+<section id="researchSurface" hidden><div class="research-composer"><label class="sr-only" for="researchQuery" data-i18n="researchRequest"></label><textarea id="researchQuery" maxlength="3000" rows="3" data-placeholder="researchPlaceholder"></textarea><div class="research-actions"><button type="button" id="researchDiagnose" class="text-button" data-i18n="researchDiagnose"></button><button type="button" id="researchFresh" data-i18n="researchFresh"></button><button type="button" id="researchMore" data-i18n="researchMore" hidden></button><button type="button" id="researchStop" data-i18n="stopGeneration" hidden></button></div></div><div id="researchDiagnostic" class="model-task-feedback" hidden></div>
+<div id="researchRounds" class="research-round-tabs" role="tablist" data-aria-i18n="researchRoundTabs" hidden></div>
+<div id="researchRoundPanel" role="tabpanel">
+<div id="researchProgressRow" class="research-progress-row" hidden><ol id="researchSteps" class="research-steps" role="list" aria-live="polite" hidden></ol><div id="researchLogAction" class="research-log-action" hidden><span class="research-log-divider" aria-hidden="true">｜</span><button type="button" id="researchQueryLog" class="aux-icon-button research-log-button" aria-haspopup="dialog" data-icon="notebook" hidden><span class="sr-only" data-i18n="researchQueries"></span></button></div><div class="research-check-actions"><button type="button" id="researchCheckLower" class="text-button" data-i18n="researchCheckLower" hidden></button></div></div><div id="researchWarning" class="research-notice" hidden><span id="researchWarningText" role="status"></span><button type="button" id="researchRetryScoring" class="secondary" data-i18n="researchAgain" hidden></button><button type="button" id="researchDismiss" class="aux-icon-button" data-icon="x" data-aria-i18n="researchDismiss"></button></div><p id="researchStatus" role="status" aria-live="polite" class="small muted"></p><div id="researchOverview" class="research-overview" hidden><h2 id="researchTotal"></h2><div class="research-filters" role="group" data-aria-i18n="researchRelevance"><button type="button" id="researchHigh"></button><button type="button" id="researchCandidatesLabel"></button><button type="button" id="researchUnscored"></button></div></div>
+<div id="researchResultList" class="research-result-groups"></div></div></section><dialog id="researchLogDialog" aria-labelledby="researchLogTitle"><form method="dialog"><div class="section-heading"><h2 id="researchLogTitle" data-i18n="researchQueries"></h2><button type="submit" aria-label="Close" data-aria-i18n="closeDialog">×</button></div></form><div id="researchQueries"></div></dialog></body></html>

@@ -1,0 +1,47 @@
+/* Wallpapers carry a coordinated light and dark palette, not a photo-only swap. */
+:root{--wallpaper-image:url('/assets/alpine-wallpaper.jpg');--wallpaper-position:76%;--theme-wash:217 231 222;--theme-dark-wash:12 28 20;--theme-tint:23 63 45;--theme-accent-dark:#294b3a;--theme-contrast:#f6faf7}
+:root[data-wallpaper=coast]{--wallpaper-image:url('/assets/wallpaper-coast.jpg');--wallpaper-position:50%;--theme-wash:215 233 238;--theme-dark-wash:9 29 39;--theme-tint:20 65 80;--ink:#213f4c;--muted:#506d7a;--accent:#28667c;--blue:#28667c;--navy:#245369;--paper:#e2eef1;--surface:#f4fafc;--well:#e2edf1;--soft:#d4e6ee;--line:#244b6226;--glass-rgb:237 248 252;--theme-accent-dark:#215369}
+:root[data-wallpaper=dunes]{--wallpaper-image:url('/assets/wallpaper-dunes.jpg');--wallpaper-position:50%;--theme-wash:242 227 206;--theme-dark-wash:39 26 17;--theme-tint:103 66 35;--ink:#4b3527;--muted:#78604d;--accent:#946236;--blue:#946236;--navy:#725032;--paper:#f1e8db;--surface:#fdf8ef;--well:#eee3d3;--soft:#e9d7bb;--line:#79542c26;--glass-rgb:253 245 230;--theme-accent-dark:#754b27}
+:root[data-wallpaper=peaks]{--wallpaper-image:url('/assets/wallpaper-peaks.jpg');--wallpaper-position:50%;--theme-wash:225 225 240;--theme-dark-wash:22 21 40;--theme-tint:61 57 91;--ink:#37384e;--muted:#666980;--accent:#64617f;--blue:#64617f;--navy:#4b4a67;--paper:#e9e9f1;--surface:#f7f7fc;--well:#e9e8f1;--soft:#deddec;--line:#52517226;--glass-rgb:245 244 253;--theme-accent-dark:#504e6b}
+:root[data-wallpaper=lake]{--wallpaper-image:url('/assets/wallpaper-lake.jpg');--wallpaper-position:50%;--theme-wash:220 234 226;--theme-dark-wash:15 29 28;--theme-tint:33 74 64;--ink:#25463e;--muted:#58746b;--accent:#3d7666;--blue:#3d7666;--navy:#2d5a4f;--paper:#e5efe9;--surface:#f6fbf7;--well:#e2ece4;--soft:#d6e7dc;--line:#365d4c26;--glass-rgb:239 250 242;--theme-accent-dark:#2c5d50}
+:root[data-wallpaper=sunset]{--wallpaper-image:url('/assets/wallpaper-sunset.jpg');--wallpaper-position:50%;--theme-wash:241 222 214;--theme-dark-wash:40 23 26;--theme-tint:105 56 59;--ink:#52363a;--muted:#806368;--accent:#9b6265;--blue:#9b6265;--navy:#7c4b50;--paper:#f3e5e2;--surface:#fff7f4;--well:#f0e0dc;--soft:#ebd3cd;--line:#80535926;--glass-rgb:255 240 233;--theme-accent-dark:#804b51}
+:root[data-theme=dark][data-wallpaper]{--ink:#e8f0eb;--muted:#bacbc1;--surface:#22352b;--well:#273c31;--soft:#365044;--paper:#192c23;--line:#d4f1de26;--accent:#b2d4bf;--blue:#b2d4bf;--navy:#d1e6d9;--glass-rgb:24 43 33;--theme-contrast:#152b20;--theme-accent-dark:#c8e1d2}
+:root[data-theme=dark][data-wallpaper=coast]{--ink:#e6f0f6;--muted:#afc7d5;--accent:#acd3e5;--blue:#acd3e5;--navy:#c5dfe9;--paper:#162733;--surface:#203441;--well:#263d4c;--soft:#324f60;--glass-rgb:20 38 51;--theme-contrast:#132e3e;--theme-accent-dark:#cee6f0}
+:root[data-theme=dark][data-wallpaper=dunes]{--ink:#f4eadb;--muted:#cdbba5;--accent:#dfbd8b;--blue:#dfbd8b;--navy:#efdbbc;--paper:#2c231a;--surface:#3b2f22;--well:#463724;--soft:#5c472e;--glass-rgb:48 36 23;--theme-contrast:#3b2814;--theme-accent-dark:#eed8b3}
+:root[data-theme=dark][data-wallpaper=peaks]{--ink:#efedf9;--muted:#c3bedb;--accent:#c4bce8;--blue:#c4bce8;--navy:#ddd6f4;--paper:#222132;--surface:#302d46;--well:#39354e;--soft:#49435f;--glass-rgb:32 29 49;--theme-contrast:#29213f;--theme-accent-dark:#ddd5f6}
+:root[data-theme=dark][data-wallpaper=lake]{--ink:#e4f3ec;--muted:#b2cfc2;--accent:#a1d6c4;--blue:#a1d6c4;--navy:#c3e7d9;--paper:#192f2a;--surface:#243e35;--well:#2b493d;--soft:#385e4e;--glass-rgb:22 45 36;--theme-contrast:#17382c;--theme-accent-dark:#c2e9da}
+:root[data-theme=dark][data-wallpaper=sunset]{--ink:#faeae7;--muted:#d4b8b7;--accent:#e8b7b6;--blue:#e8b7b6;--navy:#f3d4ce;--paper:#302125;--surface:#432e34;--well:#4d343b;--soft:#614149;--glass-rgb:49 28 35;--theme-contrast:#421e27;--theme-accent-dark:#f3d4cf}
+:root body:not(:has(#homeView:not([hidden]))):before{background:linear-gradient(rgb(var(--theme-wash) / .48),rgb(var(--theme-wash) / .48)),var(--wallpaper-image) center var(--wallpaper-position)/cover no-repeat}
+:root[data-theme=dark] body:not(:has(#homeView:not([hidden]))):before{background:linear-gradient(rgb(var(--theme-dark-wash) / .6),rgb(var(--theme-dark-wash) / .6)),var(--wallpaper-image) center var(--wallpaper-position)/cover no-repeat}
+:root #homeView .dashboard-heading:before{background:var(--wallpaper-image) center var(--wallpaper-position)/cover no-repeat}
+:root .primary{background:var(--accent);border-color:var(--accent);color:var(--theme-contrast)}
+:root .primary:hover,:root[data-theme=dark] .primary:hover{background:var(--theme-accent-dark);border-color:var(--theme-accent-dark)}
+:root[data-theme=dark] .primary{color:var(--theme-contrast)}
+:root #presetStyles .style-card:nth-child(n) h3{color:var(--ink)}
+:root #presetStyles .style-card:nth-child(n) p{color:var(--muted)}
+:root .project-glyph,:root .source-number,:root .source-type,:root .asset-types button.active{background:var(--soft);color:var(--ink)}
+:root #settings{width:960px}
+:root .settings-tabs{display:flex;gap:8px;background:rgb(var(--glass-rgb) / .35);border-radius:16px;padding:4px;margin:24px 0}
+:root .settings-tabs button{flex:1;padding:12px 20px;border:0;border-radius:12px;background:transparent;color:var(--muted);font-size:14px}
+:root .settings-tabs button[aria-selected=true]{background:rgb(var(--glass-rgb) / var(--glass-control-alpha));color:var(--ink);box-shadow:var(--glass-shadow)}
+:root .wallpaper-settings{padding-top:8px}
+:root :is(.theme-settings,.wallpaper-settings) h3{font-size:18px;line-height:28px;font-weight:500;margin:0}
+:root .wallpaper-settings h3{margin-bottom:20px}
+:root .wallpaper-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+:root .wallpaper-choice{padding:4px;border:2px solid transparent;background:rgb(var(--glass-rgb) / .3);border-radius:16px;text-align:left;position:relative;overflow:hidden;transition:transform 300ms cubic-bezier(.22,1,.36,1),border-color 300ms cubic-bezier(.22,1,.36,1)}
+:root .wallpaper-choice img{display:block;width:100%;height:110px;object-fit:cover;border-radius:10px}
+:root .wallpaper-choice[data-wallpaper=forest] img{object-position:center 76%}
+:root .wallpaper-choice span{display:block;padding:10px 12px;font-size:13px;color:var(--ink)}
+:root .wallpaper-choice[aria-pressed=true]{border-color:var(--accent);background:rgb(var(--glass-rgb) / .55)}
+:root .wallpaper-choice[aria-pressed=true]:after{content:'✓';position:absolute;right:14px;top:14px;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--theme-contrast);font-size:14px}
+:root .wallpaper-choice:hover{transform:translateY(-2px)}
+:root .wallpaper-note{font-size:12px;color:var(--muted);margin:16px 0 0}
+:root #systemSettingsPanel .glass-appearance{margin-top:24px}
+:root #systemSettingsPanel,:root #modelSettingsPanel{animation:settings-enter 350ms cubic-bezier(.22,1,.36,1) both}
+@keyframes settings-enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+::view-transition-old(root){animation:page-out 180ms cubic-bezier(.22,1,.36,1) both}
+::view-transition-new(root){animation:page-in 320ms cubic-bezier(.22,1,.36,1) both}
+@keyframes page-out{to{opacity:0}}
+@keyframes page-in{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){:root .wallpaper-choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}:root .wallpaper-choice img{height:88px}}
+@media(prefers-reduced-motion:reduce){:root #systemSettingsPanel,:root #modelSettingsPanel{animation:none}:root .wallpaper-choice{transition:none}:root .wallpaper-choice:hover{transform:none}::view-transition-old(root),::view-transition-new(root){animation:none}}

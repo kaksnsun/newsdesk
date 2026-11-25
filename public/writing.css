@@ -1,0 +1,211 @@
+/* Project-level sources, article-level composition. */
+:root .library-imports{grid-template-columns:repeat(2,minmax(0,1fr))}
+:root .personal-articles{border-top:1px solid var(--line);margin-top:32px;padding-top:26px}
+:root .personal-articles .panel-heading{align-items:center;margin-bottom:16px}
+:root .personal-articles h2{margin:0 0 7px;font-size:16px}
+:root .personal-articles .small{margin:0;font-size:12px}
+:root #uploadDraft{display:inline-flex;align-items:center;gap:8px;background:var(--surface);white-space:nowrap}
+:root #uploadDraft span,:root #uploadDraft small{display:none}
+:root #uploadDraft b{font-size:12px;font-weight:500}
+:root .imported-article-row{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 18px;border:1px solid var(--line);background:var(--surface);border-radius:8px;margin:10px 0}
+:root .imported-article-row>span{min-width:0;overflow-wrap:anywhere;font-size:13px}
+:root .imported-article-row button{font-size:11px;flex:none}
+:root .source-item>.row{justify-content:flex-start;align-items:flex-start;gap:12px}
+:root .source-item h3{flex:1;min-width:0;margin:0;overflow-wrap:anywhere}
+:root .source-number{font-size:12px;font-variant-numeric:tabular-nums;font-weight:600;color:var(--accent);line-height:1.8;flex:none}
+:root .source-item>.row>.file-tag{flex:none;margin-top:2px}
+:root .source-item p{margin-top:14px}
+:root #writingWorkspace{padding-top:0;min-height:calc(100vh - 213px);position:relative;padding-bottom:110px}
+:root .writing-tabbar{display:flex;gap:10px;align-items:center;max-width:1100px;margin:0 auto 24px;border-bottom:1px solid var(--line);min-height:56px}
+:root #writingTabs{display:flex;gap:6px;min-width:0;overflow:auto;align-items:center;padding:8px 0;scrollbar-width:thin}
+:root .writing-tab{display:flex;gap:8px;align-items:center;background:transparent;border:1px solid transparent;white-space:nowrap;font-size:12px;min-height:34px;flex:none;max-width:240px}
+:root .writing-tab>span{overflow:hidden;text-overflow:ellipsis}
+:root .writing-tab.active{background:var(--surface);color:var(--accent);border-color:var(--line)}
+:root .writing-tabbar>.text-button{flex:none;padding:5px 8px;white-space:nowrap;font-size:12px}
+:root #writingWorkspace>.writing-v2{border:0;background:transparent;box-shadow:none;padding:0;max-width:1100px;min-height:calc(100vh - 315px)}
+:root .writing-entry{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;position:relative;margin:4px 0 20px}
+:root .writing-entry>button{font-size:12px;border-color:transparent;background:transparent;color:var(--muted)}
+:root .writing-entry>button.active{background:var(--soft);color:var(--accent);border-color:var(--line)}
+:root #importedChoices{width:min(480px,100%);padding:10px;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 30px #1c302415;border-radius:10px;position:absolute;z-index:25;top:44px;right:0}
+:root #importedChoices button{display:block;width:100%;text-align:left;margin:4px 0;font-size:12px;white-space:normal;line-height:1.6}
+:root #documentArea{border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);padding:0 clamp(24px,3.5vw,58px) 16px}
+:root #documentArea>.section-heading{margin:0 calc(-1 * clamp(24px,3.5vw,58px)) 12px;padding:14px 20px;min-height:60px}
+:root #writingExport{font-size:11px;min-height:30px;padding:6px 9px}
+:root #documentArea .article{min-height:380px;max-height:none;height:clamp(380px,45vh,700px);width:100%;display:block}
+:root .selection-tools{display:flex;align-items:center;gap:12px;min-height:40px;padding:8px 0}
+:root .selection-tools .small{font-size:11px}
+:root #addAnnotation{font-size:11px;padding:7px 10px;flex:none}
+:root #documentArea .editor-footer{padding-top:12px}
+:root .composer{width:min(760px,100%);margin:auto;position:relative;display:flex;flex-direction:column;gap:0}
+:root .composer-welcome{text-align:center;margin:20px 0 26px}
+:root .composer-symbol{display:block;width:34px;height:34px;margin:0 auto 17px;background:var(--accent);mask:url('/icons/file-text.svg') center/contain no-repeat;-webkit-mask:url('/icons/file-text.svg') center/contain no-repeat}
+:root .composer-welcome h2{font-size:28px;letter-spacing:-.6px;font-weight:550;margin:0 0 12px}
+:root .composer-welcome p{font-size:13px;color:var(--muted);line-height:1.8;margin:0}
+:root .composer>#brief{height:150px;min-height:100px;padding:20px 22px;background:var(--surface);border:1px solid var(--line);border-radius:14px 14px 0 0;resize:vertical;font-size:14px;line-height:1.9;box-shadow:0 3px 12px #223b2905;border-bottom:0}
+:root .composer-options{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:0 0 14px 14px;padding:14px 18px;box-shadow:0 6px 18px #223b2905;position:relative}
+:root .composer-select{position:relative;display:flex;align-items:center;margin:0;gap:6px;font-size:11px;font-weight:400;color:var(--muted);min-width:0}
+:root .composer-select>span{display:none}
+:root .composer-select select{background:var(--paper);padding:7px 24px 7px 10px;border-color:var(--line);min-height:34px;font-size:12px;width:auto;max-width:180px;border-radius:7px}
+:root #newWritingStyle{font-size:11px;padding:5px;min-height:30px}
+:root .composer-actions #customRun{min-width:64px;font-size:12px;min-height:36px}
+:root .source-picker{position:relative;min-width:90px}
+:root .source-picker>summary{list-style:none;cursor:pointer;background:var(--paper);border:1px solid var(--line);border-radius:7px;padding:8px 10px;font-size:12px;min-height:34px;white-space:nowrap}
+:root .source-picker>summary:after{content:'⌄';margin-left:10px;color:var(--muted)}
+:root .source-picker>summary::-webkit-details-marker{display:none}
+:root .source-picker-panel{position:absolute;bottom:calc(100% + 12px);left:0;width:340px;max-width:calc(100vw - 110px);padding:14px;background:var(--raised);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 36px #18281c24;z-index:31}
+:root #sourceSearch{font-size:12px;padding:9px 10px}
+:root #sourceOptions{max-height:240px;overflow:auto}
+:root .source-option{display:flex;align-items:flex-start;gap:10px;font-size:12px;font-weight:400;line-height:1.7;margin:0;padding:10px 5px;border-radius:6px;cursor:pointer}
+:root .source-option:hover{background:var(--well)}
+:root .source-option input{width:15px;height:15px;flex:none;accent-color:var(--accent);margin:3px 0 0;padding:0}
+:root .source-option>span{flex:1;min-width:0;overflow-wrap:anywhere}
+:root .composer-bottom{width:100%;margin:24px 0 0;position:sticky;bottom:20px;z-index:15}
+:root .composer-bottom .composer-welcome{display:none}
+:root .composer-bottom>#brief{height:90px;min-height:70px;padding:15px 18px;font-size:13px}
+:root .composer-bottom .composer-options{padding:10px 14px}
+:root .composer-bottom .model-activity{margin:8px 0 0;font-size:11px}
+:root .writing-v2:not(:has(#documentArea:not([hidden]))) .composer{margin-top:clamp(30px,10vh,130px);margin-bottom:auto}
+:root .writing-v2:not(:has(#documentArea:not([hidden]))) .composer-welcome{margin-top:0}
+:root .review-open #writingWorkspace{padding-right:24px;padding-left:24px}
+:root .review-open #writingWorkspace>.writing-v2{padding:0}
+:root .annotation-panel{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+:root .annotation-panel>.panel-heading{margin-bottom:10px}
+:root .annotation-panel h2{font-size:16px;margin:0}
+:root .annotation-panel>.small{font-size:11px;margin-bottom:20px}
+:root .annotation-card{padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;margin:14px 0}
+:root .annotation-card>.row{justify-content:space-between;gap:10px;margin-bottom:12px}
+:root .annotation-card strong{font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted)}
+:root .annotation-state{font-size:11px;color:var(--muted);padding:4px 7px;background:var(--well);border-radius:4px}
+:root .annotation-state.ready,:root .annotation-state.applied{background:var(--soft);color:var(--accent)}
+:root .annotation-state.running{color:#956215;background:#f3ead5}
+:root .annotation-card blockquote{border-left:2px solid var(--accent);margin:0 0 12px;padding-left:12px;font-size:12px;line-height:1.8;max-height:110px;overflow:auto;white-space:pre-wrap}
+:root .annotation-card textarea{min-height:65px;height:75px;font-size:12px;line-height:1.8}
+:root .annotation-card>.row:last-child{justify-content:flex-end;margin:12px 0 0}
+:root .annotation-card button{font-size:11px}
+:root .annotation-output{white-space:pre-wrap;font-size:13px;line-height:1.9;background:var(--soft);padding:14px;border-radius:6px}
+:root .generation-bar{position:fixed;left:244px;right:24px;bottom:14px;z-index:50;display:flex;align-items:center;flex-wrap:wrap;gap:6px;background:var(--raised);border:1px solid var(--line);border-radius:12px;padding:8px 10px;box-shadow:0 10px 35px #1e332321;max-height:180px;overflow:auto}
+:root .generation-bar[hidden]{display:none}
+:root .job-link{display:flex;align-items:center;gap:10px;min-width:0;flex:1;font-size:12px;text-align:left;background:transparent;border:0}
+:root .job-link>span:nth-child(2){overflow:hidden;white-space:nowrap;text-overflow:ellipsis;max-width:380px}
+:root .job-progress{margin-left:auto;color:var(--muted);font-size:11px;white-space:nowrap}
+:root .job-dot,:root .tab-running,:root .tab-ready{height:7px;width:7px;flex:none;border-radius:50%;background:var(--accent);display:inline-block}
+:root .running .job-dot,:root .tab-running{animation:jobPulse 1.5s ease-in-out infinite}
+:root .job-dismiss{border:0;background:transparent;padding:6px;width:28px;min-height:28px}
+:root .error{color:#aa5345}
+@keyframes jobPulse{0%,100%{opacity:.4}50%{opacity:1}}
+@media(max-width:1200px){:root .review-open #writingWorkspace{margin-right:0}:root .composer-select select{max-width:155px}}
+@media(max-width:950px){:root .generation-bar{left:86px;right:14px}:root .job-link>span:nth-child(2){max-width:240px}}
+@media(max-width:650px){:root #writingWorkspace{padding-top:0;padding-bottom:100px}:root .writing-tabbar{margin-bottom:16px;gap:5px;min-height:48px}:root .writing-tab{font-size:11px;max-width:150px;padding:7px 9px}:root .writing-tabbar>.text-button{font-size:11px}:root #writingWorkspace>.writing-v2,:root .review-open #writingWorkspace>.writing-v2{padding:0}:root #documentArea{padding:0 16px 12px;border-radius:9px}:root #documentArea>.section-heading{margin:0 -16px 12px;padding:12px 14px}:root #documentArea .article{font-size:14px;line-height:1.9;min-height:350px;height:420px}:root .selection-tools{align-items:flex-start;flex-direction:column;gap:6px}:root .selection-tools .small{font-size:10px}:root .composer-welcome h2{font-size:23px;line-height:1.5}:root .composer-welcome p{font-size:12px}:root .composer>#brief{padding:16px;height:140px;font-size:13px}:root .composer-options{padding:12px;gap:8px}:root .composer-select select{font-size:11px;max-width:130px;padding:7px 18px 7px 8px}:root .source-picker>summary{font-size:11px}:root #newWritingStyle{font-size:10px}:root .composer-bottom{position:relative;bottom:auto;margin-top:16px}:root .source-picker-panel{left:auto;right:0;width:270px;max-width:calc(100vw - 100px)}:root .writing-entry>button{font-size:11px;padding:7px 9px}:root .personal-articles>.panel-heading{align-items:flex-start;flex-wrap:wrap}:root .imported-article-row{flex-direction:column;align-items:flex-start;padding:14px;gap:12px}:root .library-imports{grid-template-columns:1fr}:root .source-item>.row{flex-wrap:wrap;gap:8px}:root .source-item>.row>h3{flex-basis:70%}:root .source-item>.row>.file-tag{margin-left:30px}:root .generation-bar{left:65px;right:8px;bottom:8px;padding:6px;max-height:150px}:root .job-link{flex-wrap:wrap;gap:7px;font-size:11px;padding:7px;flex-basis:80%}:root .job-link>span:nth-child(2){max-width:190px}:root .job-progress{font-size:10px;margin-left:14px}:root .annotation-card{padding:14px}:root .annotation-card>.row{gap:8px}:root .annotation-panel>.panel-heading{gap:10px;flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){:root .job-dot,:root .tab-running{animation:none}}
+:root #documentArea .article{height:clamp(320px,32vh,500px);min-height:320px}
+:root .annotation-panel{margin-bottom:24px}
+:root .composer-bottom{bottom:20px}
+@media(max-width:650px){:root #documentArea .article{height:360px;min-height:300px}:root .composer-bottom{bottom:auto}}
+:root .writing-tabbar{position:relative}
+:root .writing-tab-item{display:flex;align-items:center;gap:0;flex:none;max-width:100%;border:1px solid transparent;border-radius:8px;padding-right:3px}
+:root .writing-tab-item:has(.writing-tab.active){background:var(--surface);border-color:var(--line)}
+:root .writing-tab-item .writing-tab{flex-shrink:1;min-width:0;background:transparent;border:0;padding-right:6px;max-width:210px}
+:root .close-writing{min-height:23px;height:23px;width:23px;padding:0;border:0;background:transparent;color:var(--muted);font-size:16px;line-height:1;opacity:.65;flex:none}
+:root .close-writing:hover{opacity:1;background:var(--well);color:var(--ink)}
+:root .proposed-title{font-size:17px;font-weight:550;line-height:1.6;margin:12px 0;color:var(--ink)}
+@media(max-width:650px){:root .writing-tabbar{flex-wrap:wrap}:root #writingTabs{max-width:100%;flex-basis:100%}:root .writing-tab-item .writing-tab{max-width:150px}:root .close-writing{opacity:.8}}
+/* One composer, multiple independently retained edit tasks. */
+:root #composer{border:1px solid var(--line);border-radius:14px;background:var(--surface);box-shadow:var(--shadow);gap:0}
+:root #composer:not(.composer-bottom){background:transparent;border:0;box-shadow:none}
+:root #composer>#annotationPanel{margin:0;padding:14px 18px 0;border:0}
+:root #composer>.composer-options{border:0;border-radius:0 0 14px 14px;box-shadow:none}
+:root #composer>#brief{border:0;border-radius:12px 12px 0 0;box-shadow:none}
+:root #composer:not(.composer-bottom)>#brief{border:1px solid var(--line);border-bottom:0}
+:root #composer:not(.composer-bottom)>.composer-options{border:1px solid var(--line);border-top:0}
+:root #composer:has(#annotationPanel:not([hidden]))>#brief{height:100px;min-height:80px;border-radius:0;padding:14px 18px}
+:root .task-strip{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px}
+:root #annotationList{display:flex;gap:7px;flex:1;min-width:0;overflow:auto;scrollbar-width:thin}
+:root .edit-task{display:flex;align-items:center;gap:7px;white-space:nowrap;flex:none;background:transparent;border:1px solid transparent;font-size:12px;min-height:32px;padding:6px 10px}
+:root .edit-task.active{background:var(--soft);color:var(--accent);border-color:var(--line)}
+:root .task-state{font-size:10px;color:var(--muted)}
+:root .task-state.ready,:root .task-state.applied{color:var(--accent)}
+:root .task-state.running{color:#ad7b22}
+:root #runAnnotations{font-size:11px;white-space:nowrap;flex:none}
+:root .task-context-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;color:var(--muted);font-size:11px}
+:root #annotationQuote{margin:8px 0 0;padding:9px 12px;border-left:2px solid var(--accent);background:var(--paper);border-radius:0 6px 6px 0;white-space:pre-wrap;max-height:100px;overflow:auto;font-size:12px;line-height:1.8}
+:root #annotationReview{padding:0 18px 12px}
+:root #annotationReview .task-result-label{font-size:11px;color:var(--muted);margin:0 0 8px}
+:root #annotationResult{margin:0 0 12px;max-height:200px;overflow:auto;font-size:12px;line-height:1.8}
+:root #annotationReview .row{justify-content:flex-end;gap:10px}
+:root #annotationReview button{font-size:11px}
+:root #annotationError{font-size:12px;line-height:1.7}
+:root #composer.composer-bottom{position:relative;bottom:auto}
+:root #composer .model-activity{margin:0 14px 14px}
+@media(max-width:650px){:root #composer>#annotationPanel{padding:12px 12px 0}:root .task-strip{align-items:flex-start;flex-wrap:wrap;gap:6px}:root #annotationList{flex-basis:100%}:root #runAnnotations{margin-left:auto}:root #annotationReview{padding:0 12px 12px}:root #composer:has(#annotationPanel:not([hidden]))>#brief{padding:12px;height:100px}}
+/* Compact global queue: one row per task, including pending passage edits. */
+:root .generation-bar{left:auto;right:20px;bottom:20px;width:330px;max-width:calc(100vw - 90px);display:block;padding:0;max-height:55vh;overflow:auto;box-shadow:0 12px 42px #17291f26}
+:root .queue-heading{padding:12px 14px;font-size:12px;font-weight:600;border-bottom:1px solid var(--line)}
+:root .queue-row{display:flex;align-items:center;border-bottom:1px solid var(--line);padding:5px 8px}
+:root .queue-row:last-child{border-bottom:0}
+:root .job-link{display:grid;grid-template-columns:8px minmax(0,1fr);gap:4px 8px;width:100%;padding:8px;flex:1}
+:root .job-link .job-name{white-space:normal;overflow-wrap:anywhere;max-width:none;font-size:12px}
+:root .job-project,:root .job-link .job-progress{grid-column:2;font-size:10px;color:var(--muted);margin:0;white-space:normal}
+:root .job-link .job-error{grid-column:2;font-size:11px;line-height:1.5;color:var(--ink);overflow-wrap:anywhere}
+:root #modelActivityText{overflow-wrap:anywhere}
+:root .job-dismiss{flex:none;width:auto;font-size:10px}
+@media(max-width:650px){:root .generation-bar{left:auto;right:10px;bottom:10px;width:290px;max-height:38vh}:root .job-link{flex-basis:auto}}
+/* The manuscript and review share the same reading surface. */
+:root #reviewSpread{width:100%;min-width:0}
+:root .original-label{display:none}
+:root .review-open #reviewSpread{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+:root .review-open #writingWorkspace{display:block;margin-right:0}
+:root .review-open #writingWorkspace>.writing-v2{width:100%;max-width:1450px;margin:auto}
+:root .review-open #reviewDrawer{position:static;display:block;width:auto;max-height:none;height:auto;box-shadow:none;border:1px solid var(--line);border-radius:14px;padding:20px;background:var(--surface);overflow:visible;min-width:0}
+:root .review-open #documentArea{padding:0 22px 16px}
+:root .review-open .original-label{display:block;color:var(--muted);font-size:11px;margin:18px 0 0}
+:root .review-open #documentArea>.section-heading{margin:0 -22px;padding:16px;flex-wrap:wrap;gap:12px}
+:root .review-open #article,:root #result{height:62vh;min-height:400px;line-height:1.95;font-size:14px;resize:vertical}
+:root #result{width:100%;border:0;padding:12px 0;background:transparent}
+:root .review-open #composer{margin-top:22px}
+:root .personal-articles{border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 24px;background:var(--surface)}
+:root #importWriting{border:1px solid var(--line);background:var(--surface);color:var(--accent)}
+/* Reserve space for the task dock instead of covering content. */
+:root .generation-bar{width:310px;max-height:calc(100vh - 110px);bottom:16px;right:16px}
+:root .queue-heading{display:block;width:100%;text-align:left;background:var(--soft);color:var(--accent);border:0;border-radius:10px;font-size:12px;padding:13px}
+:root body.has-task-queue .app-content{padding-bottom:66px}
+:root .job-progress{font-weight:600;padding:3px 6px;border-radius:4px;background:var(--soft)}
+:root .phase-completedModel,:root .phase-ready{color:var(--accent);background:#2f70551a}
+:root .phase-thinkingModel,:root .phase-generatingModel{color:#a56712;background:#ba7b1717}
+:root .phase-failedModel,:root .phase-failed{color:#b0483c;background:#b0483c15}
+@media(max-width:1099px){:root .generation-bar{max-height:40vh}:root .review-open #reviewSpread{grid-template-columns:1fr}}
+:root .review-open #reviewDrawer>.section-heading{margin:0 0 18px;padding:0 0 14px;position:static;min-height:42px;border-bottom:1px solid var(--line)}
+:root .review-open #reviewDrawer h2{font-size:15px;color:var(--ink)}
+:root .review-open #reviewDrawer #proposedTitle{font-size:22px;line-height:1.5;font-weight:600;padding:12px 0}
+
+:root #importWriting{font-size:12px;white-space:nowrap}
+@media(max-width:650px){:root #importWriting{font-size:11px}:root .review-open #writingWorkspace{padding:12px}:root .review-open #documentArea{padding:0 16px 14px}:root .review-open #documentArea>.section-heading{margin:0 -16px}}
+:root #articleStart{width:min(560px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;color:var(--ink)}
+:root #articleStart>.section-heading{gap:12px;margin-bottom:16px}
+:root #articleStart h2{font-size:24px;line-height:32px;margin:0}
+:root #articleStart label{margin-top:0}
+:root #startingDraft{width:100%;margin:8px 0 0;padding:12px;min-height:144px}
+:root #draftUploadError{margin:8px 0 0;color:var(--error,#a63935);font-size:14px;line-height:20px}
+:root[data-theme=dark] #draftUploadError{color:#f2aba4}
+:root .draft-upload-actions{justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:16px}
+:root #savedDraftOptions{margin-top:24px;padding-top:12px;border-top:1px solid var(--line)}
+:root .start-existing{display:flex;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}
+:root .start-existing>span{flex:1;min-width:0;overflow-wrap:anywhere}
+:root .start-existing button,:root .start-original{font-size:11px}
+:root .start-original{display:block;margin-top:10px;text-align:left}
+@media(max-width:650px){:root #articleStart{padding:16px}:root .start-existing{flex-wrap:wrap}:root .start-existing>span{flex-basis:100%}}
+:root .project-list-item{display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
+:root .project-list-item>.project-row{flex:1;min-width:0;border-bottom:0}
+:root .delete-project{flex:none;font-size:12px;color:var(--muted);margin-right:16px}
+:root .delete-project:hover{color:#ad493b;border-color:#ad493b}
+:root .deleted-project-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;font-size:13px}
+@media(max-width:650px){:root .project-list-item{gap:0}:root .delete-project{font-size:10px;margin-right:0;padding:8px}}
+:root .rename-writing{min-height:23px;height:23px;width:23px;padding:0;border:0;background:transparent;color:var(--muted);font-size:15px;opacity:.65;flex:none}
+:root .rename-writing:hover,:root .rename-writing:focus-visible{opacity:1;background:var(--soft);color:var(--accent)}
+:root #renameWritingDialog{width:min(420px,calc(100vw - 32px));padding:24px;border-radius:14px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+:root #writingTabName{width:100%;margin:10px 0}
+:root button.style-card{display:block;text-align:left;width:100%;min-height:140px;padding:24px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;cursor:pointer}
+:root button.style-card:hover,:root button.style-card:focus-visible{border-color:var(--accent);background:var(--soft)}
+:root button.style-card h3{font-size:16px;margin:0 0 12px}
+:root button.style-card p{font-size:12px;line-height:1.8;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;max-height:65px;white-space:pre-wrap;margin:0;color:var(--muted)}
+:root #globalStyleRules{min-height:230px;width:100%;line-height:1.8}
+:root #deleteStyle{margin-top:18px;color:#ad493b}

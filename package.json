@@ -1,0 +1,28 @@
+{
+  "name": "newsroom-local",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify:ux": "node scripts/verify-ux.mjs",
+    "setup:search": "node scripts/setup-search.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "@napi-rs/canvas": "^1.1.0",
+    "fflate": "^0.8.3",
+    "linkedom": "^0.18.15",
+    "mammoth": "^1.13.0",
+    "marked": "^18.1.3",
+    "pdfjs-dist": "^6.5.438",
+    "playwright-core": "^1.65.0",
+    "tinyld": "1.3.4",
+    "tldts": "^7.5.5"
+  }
+}

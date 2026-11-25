@@ -1,0 +1,89 @@
+/* Suggested edits sit beside the article editor. */
+:root #reviewButton,:root #reviewDrawer{display:none!important}
+:root #editorLayout{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;gap:24px;width:100%}
+:root #editorLayout.has-comments{grid-template-columns:minmax(0,1fr) 300px}
+:root #reviewSpread{display:block;min-width:0}
+:root #documentArea{width:100%;max-width:none}
+:root #documentArea>.section-heading{margin-bottom:0}
+:root #writingWorkspace.has-document #composer{margin:0 0 24px}
+:root #writingWorkspace.has-document :is(#writingConversation,#generationPreview){max-width:none;margin:0 0 24px}
+:root #writingWorkspace #documentArea textarea#article{
+ box-sizing:border-box;
+ height:auto;
+ min-height:160px;
+ max-height:none;
+ overflow:hidden;
+ resize:none;
+}
+:root #writingWorkspace .writing-v2{max-width:1440px}
+:root #changeComments.change-comments{background:transparent;border:0;box-shadow:none;border-radius:0;position:sticky;top:20px;min-width:0;max-height:calc(100vh - 40px);overflow:auto;scrollbar-width:thin;scrollbar-color:var(--muted) transparent;padding:0 4px 16px 0}
+:root .comments-heading{display:flex;align-items:center;justify-content:space-between;padding:12px 4px 16px;gap:16px}
+:root .comments-heading h2{font-size:16px;line-height:24px;font-weight:500;margin:0}
+:root .comments-heading>span{font-size:12px;color:var(--muted)}
+:root .change-comment{border:1px solid var(--glass-edge);background:rgb(var(--glass-rgb) / var(--glass-panel-alpha));box-shadow:var(--glass-shadow);backdrop-filter:blur(24px) saturate(140%);border-radius:16px;padding:16px;margin-bottom:16px;animation:comment-enter 400ms cubic-bezier(.22,1,.36,1) both;overflow-wrap:anywhere}
+:root .change-comment-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:12px;color:var(--muted)}
+:root .change-comment-heading .aux-icon-button{width:28px;min-width:28px;height:28px;min-height:28px;padding:5px;border:0}
+:root .change-comment :is(blockquote,p){font-size:13px;line-height:21px;white-space:pre-wrap;max-height:180px;overflow:auto;margin:0 0 12px}
+:root #composer>#annotationPanel{background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+:root #annotationContext .task-context-heading{align-items:flex-start}
+:root #annotationPassage{flex:1;min-width:0}
+:root #annotationPassage summary{cursor:pointer;color:var(--ink);font-size:13px;font-weight:600;padding:8px 0;width:fit-content}
+:root #annotationPassage #annotationQuote{margin:0 0 8px;overflow-wrap:anywhere}
+:root .change-comparison{margin-top:12px}
+:root .comparison-controls{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:10px}
+:root .comparison-controls button{flex:1;min-width:0;white-space:normal;background:transparent;box-shadow:none;color:var(--muted);border:0;border-bottom:2px solid transparent;border-radius:0;padding:8px 4px;font-size:12px}
+:root .comparison-controls button[aria-pressed="true"]{border-bottom-color:currentColor;color:var(--ink);font-weight:700}
+:root .change-comparison .comparison-text{margin:0;line-height:1.65;max-height:min(45vh,26rem);overflow:auto}
+:root .change-comment:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+:root .change-comment-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+:root .change-comment-actions button{font-size:12px;line-height:16px;padding:8px 12px;border-radius:10px;min-height:32px}
+:root .change-comment.accepted,:root .change-comment.rejected{opacity:.65}
+:root .fact-correction>strong{font-size:12px;line-height:20px;color:var(--accent);display:block;margin-bottom:12px;font-weight:500}
+:root .fact-correction>small{font-size:11px;line-height:18px;display:block;margin-top:8px;color:var(--muted)}
+:root .fact-correction .source-evidence{font-size:11px;line-height:18px;color:var(--muted);max-height:100px;margin-top:8px}
+:root #annotationReview{display:none!important}
+@keyframes comment-enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:1100px){:root #editorLayout.has-comments{grid-template-columns:minmax(0,1fr)}:root #changeComments.change-comments{position:static;max-height:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}:root .comments-heading{grid-column:1/-1}:root .change-comment{margin-bottom:0}}
+@media(max-width:600px){:root #changeComments.change-comments{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){:root .change-comment{animation:none}}
+
+:root .negative-prompt{border-top:1px solid var(--line);margin:16px 0;padding-top:12px;color:var(--ink)}
+:root .negative-prompt summary{cursor:pointer;font-size:12px;line-height:16px;font-weight:500;color:var(--muted);padding:8px 0;list-style:none;display:flex;align-items:center;gap:8px}
+:root .negative-prompt summary::before{content:'+';width:16px;text-align:center;font-size:16px;line-height:16px}
+:root .negative-prompt[open] summary::before{content:'−'}
+:root .negative-prompt summary::-webkit-details-marker{display:none}
+:root .negative-prompt summary:hover{color:var(--ink)}
+:root .negative-prompt summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
+:root .negative-prompt textarea{width:100%;min-height:88px;resize:vertical;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:rgb(var(--glass-rgb) / .4);color:var(--ink);font-size:14px;line-height:20px;margin-top:8px}
+:root #composer>.negative-prompt{margin:0 24px 16px}
+:root .style-negative-read{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:20px;padding:12px 16px;border-radius:12px;background:rgb(var(--glass-rgb) / .2);max-height:240px;overflow:auto}
+
+/* Targeted controls only; preserve the editor layout. */
+:root .composer-actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+:root #openNegativePrompt{position:relative}
+:root #openNegativePrompt::before{display:none}
+:root #openNegativePrompt svg{display:block;flex:none}
+:root #openNegativePrompt.has-negative-prompt{background:rgb(var(--glass-rgb) / .7);color:var(--accent)}
+:root #openNegativePrompt.has-negative-prompt::after{content:'';position:absolute;right:5px;top:5px;width:4px;height:4px;border-radius:50%;background:var(--accent)}
+:root #negativePromptDialog{width:min(480px,calc(100vw - 32px))}
+:root #negativePromptDraft{width:100%;min-height:140px;resize:vertical;font-size:14px;line-height:20px;padding:16px}
+:root .negative-dialog-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:24px}
+:root #backProjects.aux-icon-button{font-size:0;line-height:0;min-height:32px;height:32px;width:32px;min-width:32px;padding:6px;margin-bottom:10px;display:inline-grid;place-items:center}
+
+:root .editor-task-status{--editor-task-color:var(--accent);min-width:0;margin:0 0 16px;color:var(--ink)}
+:root .editor-task-status[data-state=failed]{--editor-task-color:#a3352f}
+:root[data-theme=dark] .editor-task-status[data-state=failed]{--editor-task-color:#ffaaa2}
+:root .editor-task-heading{margin-top:8px;display:flex;align-items:center;gap:12px}
+:root .editor-task-copy{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px;flex:1;min-width:0}
+:root #modelActivityText{font-size:14px;line-height:20px;font-weight:600;overflow-wrap:anywhere}
+:root #editorTaskTiming{font-size:12px;line-height:16px;font-weight:400}
+:root #editorTaskError{margin-top:12px;overflow-wrap:anywhere}
+:root #editorTaskErrorCode{display:inline-block;padding:4px 8px;border-radius:4px;background:color-mix(in srgb,var(--editor-task-color) 12%,transparent);color:var(--editor-task-color);font-family:inherit;font-size:12px;line-height:16px;font-weight:600}
+:root #editorTaskErrorMessage{margin:8px 0 0;font-size:14px;line-height:20px;font-weight:400;white-space:pre-wrap}
+:root .composer-actions #cancelGeneration{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:64px;height:38px;padding:0 8px;font-size:12px;line-height:16px}
+:root #cancelGeneration[hidden]{display:none}
+:root #cancelGeneration .stop-symbol{width:10px;height:10px;background:currentColor;border-radius:2px}
+:root .editor-task-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px}
+:root #editorTaskDetails{margin-top:12px}
+:root #editorTaskDetails>summary{cursor:pointer;font-size:12px;line-height:16px;color:var(--muted)}
+:root #editorTaskErrorDetail{margin:8px 0 0;white-space:pre-wrap;font-size:12px;line-height:16px;color:var(--muted);overflow-wrap:anywhere}

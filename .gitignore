@@ -1,0 +1,27 @@
+node_modules/
+__pycache__/
+.DS_Store
+
+.runtime/
+
+# Local exports and verification artifacts are not application source.
+/users_export_*.csv
+/screenshots/
+.env
+.env.*
+!.env.example
+
+# Local workspace files, SQLite companions, and portable exports.
+*.newsdesk
+*.newsdesk-journal
+*.newsdesk-wal
+*.newsdesk-shm
+*.newsdesk-project.json
+Newsdesk-recovery.json
+Newsdesk Backups/
+
+# Local build and diagnostic output
+outputs/
+*.log
+*.zip
+__MACOSX/

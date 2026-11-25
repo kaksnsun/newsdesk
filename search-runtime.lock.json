@@ -1,0 +1,6 @@
+{
+  "repository": "https://github.com/searxng/searxng",
+  "commit": "57ff753ad416b7bf27e59d72ae8c7cac93b56be4",
+  "python": "3.12",
+  "waitress": "3.0.2"
+}

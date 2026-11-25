@@ -1,0 +1,336 @@
+/* Common material: home, project sources and aggregated sources. */
+:root .field-today{grid-template-columns:1fr}
+:root body:has(#homeView:not([hidden])):before{display:block;inset:-32px;filter:blur(22px);background:linear-gradient(rgb(var(--theme-wash) / .52),rgb(var(--theme-wash) / .52)),var(--wallpaper-image) center var(--wallpaper-position)/cover no-repeat}
+:root[data-theme=dark] body:has(#homeView:not([hidden])):before{background:linear-gradient(rgb(var(--theme-dark-wash) / .65),rgb(var(--theme-dark-wash) / .65)),var(--wallpaper-image) center var(--wallpaper-position)/cover no-repeat}
+:root #homeView :is(.continue-panel,.home-start-project),:root #outputList .asset-item,:root #sourceList .source-item{background:linear-gradient(130deg,rgb(var(--glass-rgb) / calc(var(--glass-alpha) + .08)),rgb(var(--glass-rgb) / var(--glass-alpha)));border:1px solid var(--glass-edge);border-radius:20px;box-shadow:var(--glass-shadow);backdrop-filter:blur(24px) saturate(145%);-webkit-backdrop-filter:blur(24px) saturate(145%);color:var(--ink)}
+:root #outputList .asset-item,:root #sourceList .source-item{padding:24px;margin-bottom:16px}
+:root #outputList .asset-item .asset-info{min-width:0;flex:1}
+:root #outputList .asset-item> .row{flex:none;gap:8px}
+:root .trash-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px 4px;border-top:1px solid var(--line);margin:0;background:transparent}
+:root .trash-info{min-width:0;flex:1}
+:root .trash-info strong{display:block;font-size:14px;line-height:20px;font-weight:500;overflow-wrap:anywhere}
+:root .trash-info small{display:block;font-size:12px;line-height:16px;color:var(--muted);margin-top:6px}
+:root .trash-actions{display:flex;gap:8px;flex:none}
+:root .aux-icon-button,:root .delete-project.aux-icon-button,:root #documentArea button.aux-icon-button,:root #settings .row button.aux-icon-button{width:36px;min-width:36px;min-height:36px;height:36px;flex:none;display:inline-grid;place-items:center;padding:8px;font-size:0;line-height:0;border-radius:10px;border:1px solid var(--glass-edge);background:rgb(var(--glass-rgb) / .22);color:var(--ink);box-shadow:inset 0 1px 0 rgb(255 255 255 / .1)}
+:root .aux-icon-button:before{content:'';display:block;width:18px;height:18px;background:currentColor;mask:var(--aux-icon) center/contain no-repeat;-webkit-mask:var(--aux-icon) center/contain no-repeat}
+:root .aux-icon-button[data-icon=trash]{--aux-icon:url('/icons/trash.svg')}:root .aux-icon-button[data-icon=restore]{--aux-icon:url('/icons/restore.svg')}:root .aux-icon-button[data-icon=pencil]{--aux-icon:url('/icons/pencil.svg')}:root .aux-icon-button[data-icon=download]{--aux-icon:url('/icons/download.svg')}:root .aux-icon-button[data-icon=arrow-up-right]{--aux-icon:url('/icons/arrow-up-right.svg')}:root .aux-icon-button[data-icon=arrow-back-up]{--aux-icon:url('/icons/arrow-back-up.svg')}:root .aux-icon-button[data-icon=arrow-forward-up]{--aux-icon:url('/icons/arrow-forward-up.svg')}:root .aux-icon-button[data-icon=copy]{--aux-icon:url('/icons/copy.svg')}:root .aux-icon-button[data-icon=refresh]{--aux-icon:url('/icons/refresh.svg')}:root .aux-icon-button[data-icon=player-stop]{--aux-icon:url('/icons/player-stop.svg')}:root .aux-icon-button[data-icon=x]{--aux-icon:url('/icons/x.svg')}:root .aux-icon-button[data-icon=chevron-left]{--aux-icon:url('/icons/chevron-left.svg')}
+:root .aux-icon-button:hover{background:rgb(var(--glass-rgb) / .55);color:var(--accent)}
+:root .danger-icon:hover{color:#a3393b;background:#e795951c}
+:root #purgeDialog{max-width:480px;border-radius:24px;padding:28px}
+:root .purge-item-name{font-size:18px;line-height:28px;margin:24px 0 12px;font-weight:500;overflow-wrap:anywhere}
+:root #purgeExplanation{font-size:14px;line-height:24px;margin-bottom:28px}
+:root .purge-actions{display:flex;justify-content:flex-end;gap:12px}
+:root .danger-button{background:#a64043;color:#fff;border:1px solid #a64043;border-radius:12px;padding:12px 16px}
+/* Native controls remain the state source; these listboxes provide a consistent UI. */
+:root .glass-select{display:inline-flex;min-width:0;position:relative;max-width:100%;vertical-align:middle}
+:root select.glass-native-select{position:absolute!important;width:1px!important;height:1px!important;opacity:0!important;padding:0!important;border:0!important;clip:rect(0,0,0,0);overflow:hidden;pointer-events:none}
+:root .glass-select-trigger{display:inline-flex;align-items:center;justify-content:space-between;gap:12px;min-height:36px;min-width:96px;max-width:100%;padding:8px 12px;border:1px solid var(--glass-edge);border-radius:12px;background:rgb(var(--glass-rgb) / var(--glass-control-alpha));box-shadow:inset 0 1px 0 rgb(255 255 255 / .22);color:var(--ink);font-size:13px;line-height:20px;text-align:left}
+:root .glass-select-value{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+:root .glass-select-trigger:after{content:'';width:14px;height:14px;flex:none;background:currentColor;opacity:.65;mask:url('/icons/chevron-down.svg') center/contain no-repeat;transition:transform 300ms cubic-bezier(.22,1,.36,1)}
+:root .glass-select-trigger[aria-expanded=true]:after{transform:rotate(180deg)}
+:root .glass-select-trigger[aria-expanded=true]{outline:2px solid var(--accent);outline-offset:2px}
+:root .glass-select-menu{position:fixed;z-index:10000;margin:0;padding:6px;min-width:180px;max-height:320px;overflow:auto;border-radius:16px;border:1px solid var(--glass-edge);background:rgb(var(--glass-rgb) / var(--glass-panel-alpha));box-shadow:var(--glass-shadow),0 16px 40px -20px #09261866;backdrop-filter:blur(32px) saturate(145%);-webkit-backdrop-filter:blur(32px) saturate(145%);animation:menu-in 220ms cubic-bezier(.22,1,.36,1) both;color:var(--ink)}
+:root .glass-select-option{position:relative;padding:10px 32px 10px 12px;border-radius:10px;font-size:13px;line-height:20px;cursor:pointer;overflow-wrap:anywhere}
+:root .glass-select-option[aria-disabled=true]{opacity:.4;cursor:default}
+:root .glass-select-option.keyboard-active{background:var(--soft)}
+:root .glass-select-option[aria-selected=true]{font-weight:500;color:var(--accent)}
+:root .glass-select-option[aria-selected=true]:after{content:'';position:absolute;right:10px;top:12px;width:16px;height:16px;background:currentColor;mask:url('/icons/check.svg') center/contain no-repeat}
+:root .composer-options .glass-select{max-width:200px}
+@keyframes menu-in{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){:root .trash-row{gap:12px}:root #outputList .asset-item{flex-wrap:wrap}:root .glass-select-menu{max-width:calc(100vw - 24px)}:root .composer-options .glass-select{max-width:155px}}
+@media(prefers-reduced-motion:reduce){:root .glass-select-menu{animation:none}}
+/* Transition snapshots must never intercept the next interaction. */
+::view-transition{pointer-events:none}
+:root .rename-writing,:root .close-writing{font-size:0;display:grid;place-items:center}
+:root .rename-writing:before,:root .close-writing:before{content:'';display:block;width:14px;height:14px;background:currentColor;mask:url('/icons/pencil.svg') center/contain no-repeat}
+:root .close-writing:before{mask-image:url('/icons/x.svg')}
+:root .glass-select button:disabled{opacity:.45;cursor:not-allowed}
+::view-transition-group(root),::view-transition-image-pair(root),::view-transition-old(root),::view-transition-new(root){pointer-events:none}
+:root .composer-select>.glass-select{display:inline-flex}
+:root #assetCount{color:var(--ink)}
+:root .glass-select-menu{right:auto;bottom:auto}
+
+:root .aux-icon-button[data-icon=plus]{--aux-icon:url('/icons/plus.svg')}
+:root .aux-icon-button[data-icon=upload]{--aux-icon:url('/icons/upload.svg')}
+:root .aux-icon-button[data-icon=file-text]{--aux-icon:url('/icons/file-text.svg')}
+:root .project-top>div{display:flex;align-items:center;gap:12px;padding:12px 0 20px}
+:root .project-top #projectName{flex:0 1 auto;field-sizing:content;width:auto;min-width:2ch;max-width:calc(100% - 48px);margin:0;padding:4px 6px}
+:root .project-top #projectName:focus{outline:2px solid var(--accent);outline-offset:-2px}
+:root .project-top #backProjects.aux-icon-button{margin:0;flex:none}
+:root #homeView .bottom-note{justify-content:flex-end}
+:root #projectLibrary .library-imports{
+ grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 auto 24px;
+}
+:root #projectLibrary .library-imports button{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+ min-width:0;min-height:120px;padding:16px;border-radius:16px;text-align:center;
+}
+:root #projectLibrary .library-imports button b{
+ font-size:14px;line-height:20px;font-weight:600;text-wrap:balance;
+}
+:root #projectLibrary #addSource>span{--icon:url('/icons/file-text.svg')}
+:root #projectLibrary .source-divider{width:100%;border:0;border-top:1px solid var(--line);margin:24px 0}
+:root #sourceList .source-item:focus{outline:2px solid var(--accent);outline-offset:2px}
+:root #sourceList .source-item{scroll-margin:24px}
+:root #sourceList .source-number{background:transparent;border:0;border-radius:0;padding:0;color:var(--muted);font-size:12px;font-weight:500}
+:root #sourcePicker[open]{z-index:20}
+:root #composer #sourcePickerSummary{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;
+ min-height:36px;font:inherit;font-size:13px;font-weight:600;line-height:20px;
+ padding:8px 12px;border-radius:12px;box-shadow:inset 0 1px 0 rgb(255 255 255 / .2);
+}
+:root #composer #sourcePickerSummary:after{
+ content:'';width:14px;height:14px;margin:0;flex:none;background:currentColor;
+ mask:url('/icons/chevron-down.svg') center/contain no-repeat;opacity:.65;
+}
+:root #composer #sourcePicker[open]>summary{
+ background:var(--soft);border-color:color-mix(in srgb,var(--accent) 45%,var(--line));
+}
+:root #sourcePickerSummary:focus{outline:none}
+:root #sourcePickerSummary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+:root #sourcePicker .source-picker-panel{
+ bottom:calc(100% + 8px);width:368px;padding:12px;
+ background:var(--surface);border:1px solid var(--line);border-radius:16px;
+ box-shadow:0 16px 48px -16px rgb(0 0 0 / .36);
+}
+:root #sourceSearch{
+ width:100%;min-height:40px;margin:0;background:var(--well);border:1px solid var(--line);
+ border-radius:8px;font:inherit;font-size:14px;line-height:20px;
+}
+:root .source-picker-search{position:relative}
+:root .source-picker-search .setup-method-icon{
+ position:absolute;left:12px;top:50%;width:16px;height:16px;
+ transform:translateY(-50%);color:var(--muted);pointer-events:none;
+}
+:root .source-picker-search .setup-method-icon:after{width:16px;height:16px}
+:root #sourceSearch{padding-inline:36px 12px}
+:root #sourceOptions{max-height:min(224px,30dvh);margin-top:8px;padding:2px;overscroll-behavior:contain}
+:root .source-option{
+ display:grid;grid-template-columns:16px auto minmax(0,1fr);align-items:start;
+ padding:8px;gap:8px;border-radius:8px;font-size:14px;line-height:20px;
+}
+:root .source-option input{width:16px;height:16px;margin:2px 0 0}
+:root .source-option:hover,:root .source-option:focus-within{background:var(--well)}
+:root .source-option>.picker-source-number{color:var(--muted);font-size:12px;font-variant-numeric:tabular-nums}
+:root .source-picker-empty{margin:0;padding:12px 8px;color:var(--muted);font-size:14px;line-height:20px;text-align:center}
+:root #sourcePickerActions:not([hidden]){display:flex;gap:8px;border-top:1px solid var(--line);margin-top:8px;padding-top:8px}
+:root #sourcePickerActions button{min-height:36px;padding:8px 12px;font-size:12px;line-height:16px}
+@media(prefers-reduced-motion:reduce){
+ :root #sourcePicker[open] .source-picker-panel{animation:none}
+}
+:root .theme-settings{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:16px 0 24px}
+:root #settings .theme-settings label{margin:0;font:inherit;color:inherit}
+:root .theme-settings :is(select:not(.glass-native-select),.glass-select-trigger){width:auto;min-width:120px}
+:root .styles-actions{display:flex;align-items:center;flex:none;gap:8px}
+:root .icon-popover{position:relative;flex:none;margin:0;padding:0;border:0;background:none}
+:root .icon-popover>summary{list-style:none;cursor:pointer}
+:root .icon-popover>summary.aux-icon-button{display:grid}
+:root .icon-popover>summary::-webkit-details-marker{display:none}
+:root .trash-popover, :root #purgeDialog{
+ color-scheme:dark;
+ --ink:#f6f5f2;--muted:#d6dad7;--accent:#fff;--line:rgb(255 255 255 / .2);
+ --glass-edge:rgb(255 255 255 / .24);
+ --trash-tint:var(--theme-tint);
+ --trash-glaze:linear-gradient(145deg,rgb(var(--trash-tint) / .36),rgb(var(--trash-tint) / .68));
+ --trash-opacity:1;
+ background:var(--trash-glaze),rgb(76 75 73 / var(--trash-opacity));color:var(--ink);
+}
+:root[data-theme=dark] :is(.trash-popover,#purgeDialog){--trash-tint:var(--theme-dark-wash)}
+@supports ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ :root .trash-popover, :root #purgeDialog{
+  --trash-opacity:clamp(.84,var(--glass-panel-alpha),.94);
+  -webkit-backdrop-filter:blur(40px) saturate(130%);
+  backdrop-filter:blur(40px) saturate(130%);
+ }
+}
+:root :is(.trash-popover,#purgeDialog) button:not(.danger-button){
+ background:rgb(255 255 255 / .1);border-color:var(--glass-edge);color:var(--ink);
+}
+:root :is(.trash-popover,#purgeDialog) button:not(.danger-button):hover{
+ background:rgb(255 255 255 / .2);
+}
+:root :is(.trash-popover,#purgeDialog) .danger-icon:hover{color:#ffb9b9}
+:root #purgeDialog .danger-button:hover{background:#8f3437;color:white}
+:root .trash-popover{
+ position:absolute;right:0;top:calc(100% + 8px);z-index:10;
+ width:min(360px,calc(100vw - 40px));max-height:320px;overflow:auto;
+ padding:4px 12px;border:1px solid var(--glass-edge);border-radius:12px;
+ box-shadow:var(--glass-shadow);
+}
+:root .project-toolbar-controls>.aux-icon-button,:root .project-toolbar-controls .icon-popover>summary{height:44px;width:44px}
+:root .project-toolbar-controls .glass-select-trigger{height:44px;min-height:44px}
+:root #projectList .delete-project{margin:0}
+:root .trash-popover .project-trash-heading{margin:12px 0 4px;font-size:14px;line-height:20px}
+:root .project-trash-empty{margin:12px 0}
+:root .trash-popover .trash-row{gap:8px;padding:10px 0}
+:root .source-library-toolbar{display:flex;justify-content:flex-end;margin-bottom:12px}
+:root #deletedWritings{margin-left:auto}
+/* The open menu must sit above the writing composer (layer 15). */
+:root .icon-popover[open]{z-index:20}
+:root #writingTabs{min-width:0}
+:root #editorFields[hidden]{display:none}
+
+@media(max-width:620px){
+ :root .project-toolbar-controls .project-view-button{width:32px}
+ :root #projectList .project-list-item{gap:8px}
+ :root #projectLibrary .library-imports{gap:8px}
+ :root #projectLibrary .library-imports button{min-height:104px;padding:8px}
+ :root #projectLibrary .library-imports button b{font-size:12px;line-height:16px}
+ :root #composer .composer-options{position:relative}
+ :root #sourcePicker{position:static}
+ :root #sourcePicker .source-picker-panel{
+  position:absolute;left:8px;right:8px;bottom:calc(100% + 8px);
+  width:auto;max-width:none;max-height:min(320px,55dvh);overflow:auto;
+ }
+}
+
+:root .date-filter{display:flex;align-items:center;gap:8px;font-size:12px;line-height:16px}
+:root .asset-date-button{
+ display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:144px;min-height:40px;
+ padding:8px 12px;border-radius:8px;font-size:14px;line-height:20px;
+}
+:root .asset-date-icon{
+ width:16px;height:16px;flex:none;background:currentColor;
+ mask:url('/icons/clock.svg') center/contain no-repeat;
+}
+:root #assetDateDialog{width:min(400px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto}
+:root :is(#assetDateDialog,#assetPreviewDialog) .section-heading{align-items:flex-start;gap:12px;margin-bottom:16px}
+:root :is(#assetDateDialog,#assetPreviewDialog) .section-heading button{flex:none}
+:root #assetDateTitle,:root #assetPreviewTitle{margin:0;overflow-wrap:anywhere}
+:root .asset-calendar-controls{display:grid;grid-template-columns:36px minmax(0,1fr) 72px 36px;gap:8px;align-items:center}
+:root .asset-calendar-controls :is(input,select){width:100%;min-width:0;margin:0;padding:8px;font-size:14px;line-height:20px}
+:root #assetMonthNext{rotate:180deg}
+:root .asset-calendar-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;text-align:center}
+:root #assetCalendarWeek{margin:16px 0 4px;font-size:12px;line-height:20px;color:var(--muted)}
+:root .asset-calendar-day{min-width:0;min-height:36px;padding:4px;border-radius:8px;background:transparent;border:1px solid transparent;font-size:14px;line-height:20px}
+:root .asset-calendar-day[aria-current=date]{border-color:var(--line)}
+:root .asset-calendar-day[aria-pressed=true]{background:var(--soft);border-color:var(--accent)}
+:root .asset-calendar-day:hover{background:var(--soft)}
+:root .asset-calendar-actions{display:flex;justify-content:space-between;gap:12px;margin-top:12px}
+:root #assetPreviewDialog{width:min(760px,calc(100vw - 32px));max-height:calc(100dvh - 48px);overflow:auto;color:var(--ink)}
+:root #assetPreviewMeta{margin:0 0 8px;overflow-wrap:anywhere}
+:root #assetPreviewLink{font-size:12px;line-height:16px;overflow-wrap:anywhere}
+:root #assetPreviewBody{margin:24px 0;font-size:16px;line-height:24px;white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* Consistent, event-driven model feedback for dialogs and import cards. */
+:root .model-task-row{display:flex;align-items:center;gap:12px;margin:16px 0}
+:root .model-task-row:has(.model-task-feedback[hidden]):not(:has(button:not([hidden]))){display:none}
+:root .model-task-feedback{--task-tone:#8c570c;display:grid;grid-template-columns:8px minmax(0,1fr) auto;align-items:center;gap:12px;flex:1;min-width:0;padding:12px 16px;border:1px solid color-mix(in srgb,var(--task-tone) 22%,var(--glass-edge));border-radius:12px;background:rgb(var(--glass-rgb) / var(--glass-alpha));color:var(--ink)}
+:root .model-task-feedback[data-phase=failed]{--task-tone:#a3352f}
+:root .model-task-feedback:is([data-phase=ready],[data-phase=completed]){--task-tone:#21693f}
+:root .model-task-feedback[data-phase=stopped]{--task-tone:var(--muted)}
+:root[data-theme=dark] .model-task-feedback{--task-tone:#f5c271}
+:root[data-theme=dark] .model-task-feedback[data-phase=failed]{--task-tone:#ffaaa2}
+:root[data-theme=dark] .model-task-feedback:is([data-phase=ready],[data-phase=completed]){--task-tone:#91dfae}
+:root .model-task-signal{width:8px;height:8px;border-radius:50%;background:var(--task-tone)}
+:root .model-task-feedback:not(:is([data-phase=ready],[data-phase=completed],[data-phase=failed],[data-phase=stopped]))>.model-task-signal{animation:model-task-pulse 1.8s cubic-bezier(.22,1,.36,1) infinite}
+:root .model-task-text{min-width:0;overflow-wrap:anywhere}
+:root .model-task-text>strong{font-size:14px;line-height:20px;font-weight:600}
+:root .model-task-text>p{font-size:14px;line-height:20px;margin:8px 0 0;white-space:pre-wrap}
+:root .aux-icon-button[data-icon=settings]{--aux-icon:url('/icons/settings.svg')}
+:root .research-body-status[data-active=true]{display:flex;align-items:center;gap:8px}
+:root .research-body-status[data-active=true]::before{content:'';display:block;width:12px;height:12px;flex:none;border-radius:50%;border:2px solid currentColor;border-right-color:transparent;animation:research-check-spin 1s linear infinite}
+:root .style-sample-results:has(.style-reference-attachments:empty):has(#styleReferenceFileStatus:empty){display:none}
+@keyframes research-check-spin{to{transform:rotate(1turn)}}
+@keyframes model-task-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@media(max-width:600px){:root .model-task-row{align-items:start}:root .model-task-feedback{padding:12px}}
+@media(prefers-reduced-motion:reduce){:root .model-task-signal,:root .research-body-status::before{animation:none!important}}
+
+/* Usable targets and disclosure controls without changing the visual hierarchy. */
+:root .writing-tab-item :is(.rename-writing,.close-writing){width:32px;min-width:32px;height:32px;min-height:32px;display:inline-grid;place-items:center;padding:4px;border-radius:8px}
+:root .search-external>summary{display:flex;align-items:center;min-height:36px;padding:8px 0}
+:root #researchDiagnostic{margin:12px 0}
+:root #researchSummaryNote{margin:8px 0 0;font-size:12px;line-height:16px}
+:root .model-task-feedback>.aux-icon-button{align-self:start}
+@media(pointer:coarse){:root .writing-tab-item :is(.rename-writing,.close-writing){width:40px;height:40px;min-width:40px;min-height:40px}}
+:root .search-external>summary::before{content:'';width:16px;height:16px;flex:none;margin-right:8px;background:currentColor;mask:url('/icons/chevron-down.svg') center/contain no-repeat;transform:rotate(-90deg)}
+:root .search-external[open]>summary::before{transform:rotate(0)}
+:root .skip-link{position:fixed;top:16px;left:16px;z-index:10000;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font-size:14px;line-height:20px;font-weight:600;transform:translateY(-160%);opacity:0;pointer-events:none}
+:root .skip-link:focus{transform:none;opacity:1;pointer-events:auto}
+@media(pointer:coarse){:root .icon-button{width:40px;height:40px;min-height:40px}:root #workspaceActions{gap:8px}}
+:root .field-validation-error{margin:8px 0 0;color:#a3352f;font-size:14px;line-height:20px;font-weight:500}
+:root[data-theme=dark] .field-validation-error{color:#ffaaa2}
+:root :is(input,textarea,select)[aria-invalid=true]{outline:2px solid #a3352f;outline-offset:2px}
+:root[data-theme=dark] :is(input,textarea,select)[aria-invalid=true]{outline-color:#ffaaa2}
+:root .source-item>p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap}
+:root .source-item :is(h3,.source-url){min-width:0;overflow-wrap:anywhere}
+:root #outputList>.text-button{justify-self:center;margin:0 auto 24px}
+:root .aux-icon-button[data-icon=eye]{--aux-icon:url('/icons/eye.svg')}
+/* Match the centered three-part navigation across the workspace. */
+:root body:not(:has(#homeView:not([hidden]))) .app-content>header{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px 24px}
+:root .workspace-navigation{margin:0;justify-self:center}
+:root .app-content>header>.header-right{justify-self:end;align-items:center;margin:0}
+@media(max-width:760px){
+ :root body:not(:has(#homeView:not([hidden]))) .app-content>header{grid-template-columns:minmax(0,1fr) auto}
+ :root .workspace-navigation{grid-column:1/-1;grid-row:2;justify-content:center;margin:0}
+ :root .app-content>header>.header-right{grid-column:2;grid-row:1}
+}
+:root :is(.negative-prompt,.research-candidates,.research-card,#editorTaskDetails)>summary{min-height:36px;padding-top:8px;padding-bottom:8px;line-height:20px;cursor:pointer}
+@media(max-width:650px){:root .writing-tabbar{flex-wrap:nowrap}:root #writingTabs{flex:1 1 auto;min-width:0;max-width:none}}
+
+:root #stylesView.style-list-view .style-grid{grid-template-columns:minmax(0,1fr);gap:8px}
+/* These surfaces sit directly over the already blurred wallpaper. Keep their
+   glass tint without resampling large backdrop layers as the layout changes. */
+:root #projectList,
+:root #projectList.grid-view .project-list-item,
+:root #stylesView .style-grid button.style-card{
+ -webkit-backdrop-filter:none;backdrop-filter:none;
+}
+:root #stylesView.style-list-view button.style-card{
+ display:grid;grid-template-columns:minmax(160px,1fr) minmax(0,3fr);
+ align-items:baseline;gap:24px;min-height:56px;padding:16px 24px;
+}
+:root #stylesView.style-list-view .style-card h3{margin:0;font-size:16px;line-height:24px}
+:root #stylesView.style-list-view .style-card p{margin:0;-webkit-line-clamp:2;white-space:normal;overflow-wrap:anywhere}
+@media(max-width:680px){
+ :root #stylesView.style-list-view button.style-card{grid-template-columns:minmax(0,1fr);gap:4px;padding:12px 16px}
+}
+
+:root :is(#personalStyleList,#projectList,#outputList)>.blank-state{
+ grid-column:1/-1;display:flex;flex-direction:column;align-items:center;gap:12px;
+ padding:32px 16px;text-align:center;color:var(--muted);font-size:14px;line-height:20px;
+}
+:root #projectList:has(>.blank-state){
+ padding:0;background:transparent;border:0;box-shadow:none;backdrop-filter:none;
+}
+@media(min-width:1536px){
+ :root #homeView{max-width:1920px;margin-inline:auto;padding:24px 32px 32px}
+ :root #homeView .dashboard-heading{display:flex;flex-direction:column;align-items:stretch;gap:0;min-height:clamp(600px,58vh,840px)}
+ :root #homeView .field-today{flex:1}
+ :root #homeView .dashboard-grid,:root #homeView .bottom-note{max-width:none}
+}
+
+#libraryProblemText{overflow-wrap:anywhere}
+#libraryProblem:not([hidden]){position:sticky;top:0;z-index:30;background:var(--surface,#fff3de);color:var(--ink,#392719);padding:.75rem 1rem}
+/* Match the appearance panel, with one disclosure for occasional backup actions. */
+:root #settings #librarySettings h3{margin-bottom:12px}
+#librarySettings .library-location{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:4px 0 16px}
+.library-location-copy,.library-backup-meta{display:grid;gap:3px;min-width:0;overflow-wrap:anywhere}
+#libraryFile,.library-backup-kind{font-size:12px;line-height:1.5;color:var(--muted)}
+#librarySettings .library-icon{width:18px;height:18px;display:block;background:var(--muted);mask:var(--library-icon) center/contain no-repeat}
+.library-folder-icon{--library-icon:url('/icons/folder.svg')}
+.library-clock-icon{--library-icon:url('/icons/clock.svg')}
+#libraryHistoryPanel{border:0;border-top:1px solid var(--line);border-radius:0;background:transparent;padding:0;margin:0}
+#libraryHistory{display:flex;align-items:center;gap:12px;padding:12px 0 0;min-height:44px;cursor:pointer;color:var(--ink);font-weight:500;list-style:none}
+#libraryHistory::-webkit-details-marker{display:none}
+#libraryHistory::after{content:'';margin-inline-start:auto;width:16px;height:16px;background:currentColor;mask:url('/icons/chevron-down.svg') center/contain no-repeat}
+#libraryHistoryPanel[open]>summary::after{transform:rotate(180deg)}
+#libraryHistory:hover,#libraryHistory:focus-visible{color:var(--accent)}
+#libraryHistory:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.library-history-content{margin-top:12px}
+#libraryBackups{max-height:16rem;overflow-y:auto;font-size:13px;color:var(--muted)}
+.library-backup-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.library-backup-date{color:var(--ink);font-variant-numeric:tabular-nums}
+#librarySettings :is(#libraryMove,#libraryBackup,.library-backup-row button){background:rgb(var(--glass-rgb) / var(--glass-control-alpha));color:var(--ink);border:1px solid var(--glass-edge);border-radius:9px;padding:7px 12px;font-size:13px;line-height:20px}
+#librarySettings #libraryBackup{margin-top:12px}
+#librarySettings #libraryFeedback:not(:empty){margin:12px 0 0}
+#libraryFeedback:empty{display:none}
+@media(max-width:480px){
+ #librarySettings .library-location{grid-template-columns:minmax(0,1fr) auto;row-gap:4px}
+ #librarySettings .library-location-copy{display:contents}
+ #librarySettings #libraryFile{grid-column:1/-1;grid-row:2}
+ #librarySettings .library-folder-icon{display:none}
+ #librarySettings #libraryMove{grid-column:2;grid-row:1;max-width:100%}
+}
+#editorSaveProblem{overflow-wrap:anywhere}
+body:has(#projectView:not([hidden]) #writingWorkspace:not([hidden]) #documentArea:not([hidden])) #libraryProblem{display:none}
