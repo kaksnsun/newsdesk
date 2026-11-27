@@ -2,7 +2,12 @@
 
 [English](README.md) · **简体中文**
 
-Newsdesk 是面向新闻工作者的本地写作工具。在 Mac 上，一个项目可以收纳素材、检索记录和多篇稿件。你可以搜索报道材料，也可以导入自己的采访笔记，选择预设文风或从样文中提取个人文风，然后生成初稿、逐段对照修改。
+Newsdesk 是一款基于 **Tiiny Pocket** 的本地新闻写作应用。你可以围绕一个选题，在同一个项目里完成以下工作。
+
+- **按需写稿**：勾选素材，写明给谁看、从什么角度写、写多长，就能生成初稿。同一批素材可以写成一则简讯，也可以写成一篇解释性报道。
+- **搜索新闻素材**：输入选题，查看按相关性排序的报道，核对原文后即可将需要的文章加入素材库。
+- **导入新闻素材**：上传已有文档、粘贴采访笔记或添加报道链接，写稿时可以和搜到的材料一起使用。
+- **选择或创建文风**：直接选用内置文风，或用自己的代表作生成个人文风。生成的文风规则可以编辑、保存，在下次写稿时使用。
 
 ## 在 Mac 上运行
 
@@ -34,11 +39,73 @@ Newsdesk 是面向新闻工作者的本地写作工具。在 Mac 上，一个项
 
 在同一个项目文件夹里运行 `npm start`，再打开上面的本机地址即可。退出时在终端按 **Control-C**，应用与搜索服务会一起停止。只关闭浏览器标签页，服务仍会运行。
 
+## 在 Windows 上用 PowerShell 运行
+
+1. 安装 Windows 版 **Node.js 24** 和随附的 npm。同事在 Windows 上测试时使用的是 Node.js 24.22.1。[下载 Node.js](https://nodejs.org/en/download)
+2. 在仓库页面选择 **Code → Download ZIP**。在文件资源管理器中右键 ZIP，选择「全部提取」。打开解压后包含 `package.json` 的文件夹，在地址栏输入 `powershell` 并按回车。
+3. 在 PowerShell 中逐行执行以下命令。前两行应显示版本号。等第三行装好依赖后，再运行第四行启动 Newsdesk。
+
+   ```powershell
+   node -v
+   npm.cmd -v
+   npm.cmd ci
+   npm.cmd start
+   ```
+
+4. 终端显示本机地址后，在浏览器中打开[这台电脑上的 Newsdesk](http://127.0.0.1:43219/)，使用期间保持 PowerShell 开启。第一次写稿，先在「设置 → 模型设置」连接模型，再去「素材库」上传文档或粘贴笔记。退出时在 PowerShell 按 **Ctrl+C**。下次在同一文件夹打开 PowerShell，运行 `npm.cmd start` 即可。
+
+**在 Windows 上搜索新闻素材。** 即使终端提示内置搜索未安装，仍可打开应用、导入素材和写稿。要在当前源码版使用 Research，请进入「设置 → 模型设置 → 外部搜索服务（可选）」，勾选「改用外部 SearXNG」，填入支持 JSON 搜索结果的 SearXNG 实例地址。Research 也需要连接模型。
+
+同事已在 Windows 原生环境跑通内置搜索，测试时调整了 Python 虚拟环境路径、配置文件写入方式，以及搜索进程的启动和退出逻辑。当前仓库的搜索安装脚本仍使用 `venv/bin/python`，同事的 Windows 适配改动及自制启动脚本尚未收录。
+
 ## 试写第一篇稿件
 
-1. **连接模型。** 打开「设置 → 模型设置」，填写服务的 API 根地址、模型 ID，以及服务商要求的 API 密钥。Newsdesk 需要你提供兼容 Chat Completions 的模型服务。例如，模型服务运行在本机 1234 端口时，根地址可能是 `http://127.0.0.1:1234/v1`。填写后运行连接测试。
-2. **收集素材。** 新建项目，在「素材库」上传文档或粘贴采访笔记。也可以在 Research 输入选题，查看搜索结果，将需要的文章加入素材库。检索会调用已配置的模型改写查询并评估相关性。
-3. **写作与修改。** 打开写作页，勾选素材，选择文风和输出语言，输入写作要求并运行。在初稿中选中一段文字即可提出修改，对照前后内容后决定是否采纳。重启 Newsdesk 并重新打开项目，可检查自动保存的稿件。
+**示例选题：2027 年厄尔尼诺现象可能对环太平洋地区产生哪些经济影响？**
+
+我们为财经读者写一篇解释性报道，从两个可查证的切口入手：秘鲁渔业和印度尼西亚农业。截图使用 Newsdesk 英文界面，搜索词、写作要求和稿件均为英文示例。两份选材提供历史背景，2027 年的影响作为条件情景讨论。
+
+### 1. 连接写作模型
+
+首次使用时，打开右上角齿轮，进入 **Settings → Models**。在 **Language model** 中填写服务商提供的 **API address** 和 **Model name**。模型服务需兼容 Chat Completions。若服务商要求认证，填写 **API key**。最后测试连接。图中显示的是本机地址示例。
+
+![英文模型设置，包含 API address、API key 和 Model name](docs/images/first-story/01-model.png)
+
+### 2. 建立项目，找到能支撑选题的材料
+
+在首页点 **Start writing**，将新项目命名为 **El Niño in 2027: Pacific Rim economies**。进入 **Research**，可以直接搜索下面这个问题，再点 **Start search**。
+
+> If El Niño develops in 2027, which economic indicators should Pacific Rim reporters track? Find historical evidence on Peruvian fisheries and Indonesian agriculture.
+
+![Research 中针对秘鲁渔业和印尼农业输入的英文检索问题](docs/images/first-story/05-research.png)
+
+先看 **Recommended** 结果，打开原文核对，再点 **Add to Source**。已有材料可在 **Source library** 通过 **Paste text**、**Upload files** 或 **Add a web link** 导入。图中两条是根据以下公开资料整理后粘贴的英文笔记：
+
+- 秘鲁案例关注鳀鱼捕捞量如何影响鱼粉供应。FAO 在回顾 2023 年的产量变化时，将全球鱼粉减产主要归因于秘鲁鳀鱼捕捞不佳。[FAO 鱼粉市场回顾](https://www.fao.org/in-action/globefish/news-events/news/news-detail/2024-fishmeal-exports-bounce-back--china-dominates-imports--fish-oil-trade-declines/en)
+- 印尼案例关注干旱如何影响农业。研究者在 IMF《Finance & Development》撰文，讨论了以往厄尔尼诺时期的干旱及其对印尼农业的影响。[IMF：El Niño: Good Boy or Bad?](https://www.elibrary.imf.org/abstract/journals/022/0053/001/article-A010-en.xml)
+
+![英文素材库中的两份历史材料及三种导入入口](docs/images/first-story/02-sources.png)
+
+### 3. 用同一批材料写一篇解释性报道
+
+进入 **Write**，勾选刚才的两份素材，文风选 **Explainer**，输出语言选 **English**。在输入框写明读者、比较对象和证据要求，然后点 **Run**。
+
+> If El Niño develops in 2027, what could it mean for Pacific Rim economies? Write a short explainer for business readers. Compare fisheries in Peru with agriculture in Indonesia. Attribute the historical evidence and flag what remains unknown.
+
+![英文写作面板，已选 Explainer、两份素材和 English](docs/images/first-story/03-write.png)
+
+如果你常写这一类报道，可以在 **Styles** 中创建个人文风，例如 **Pacific Rim economic brief**。用 **Upload sample** 或 **Paste sample** 加入自己的代表作，点 **Generate style**，审阅生成的规则后点 **Save style**。下次写稿时就能直接选用。
+
+![英文个人文风窗口，展示样文和 Generate style 按钮](docs/images/first-story/06-style.png)
+
+### 4. 把笼统的导语改成读者能追踪的指标
+
+示例导语提到了秘鲁渔业和印尼农业。要让读者知道具体该观察什么，在编辑器里选中这句，输入修改要求并执行：
+
+> Lead with what readers can track in each sector. Keep the 2027 scenario conditional.
+
+在 **Suggested edits** 中切换 **Before edit** 和 **After edit**。图中改后的句子点出了秘鲁鳀鱼捕捞量和印尼作物产区的干旱状况，同时保留了 “If El Niño develops in 2027” 这一条件。点 **Accept** 采纳，或点 **Reject** 保留原句。编辑器显示 **Saved locally** 后，下次打开项目即可继续。定稿可从编辑器右上角的下载按钮导出。
+
+![英文编辑器中的示例稿，以及可对照和采纳的导语修改](docs/images/first-story/04-review.png)
 
 界面支持英语、西班牙语、法语、简体中文、日语和韩语。
 
