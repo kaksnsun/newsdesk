@@ -72,13 +72,25 @@ Newsdesk 是一款基于 **Tiiny Pocket** 的本地新闻写作应用。你可�
 
 ### 2. 建立项目，找到能支撑选题的材料
 
-在首页点 **Start writing**，将新项目命名为 **El Niño in 2027: Pacific Rim economies**。进入 **Research**，可以直接搜索下面这个问题，再点 **Start search**。
+在首页点 **Start writing**，将新项目命名为 **El Niño in 2027: Pacific Rim economies**。打开 **Research**，输入 `2027 El Niño`，点击 **Start search**。
+
+在一次保存的搜索中，Newsdesk 返回了 **53 条结果**，其中 **8 条进入推荐组，7 条可自动读取全文**。先看 **Recommended**，打开感兴趣的原文核对。模型根据标题和摘要评估每条结果与选题的相关性，分数可以帮助决定先读哪篇。判断 2027 年发生厄尔尼诺的概率，还需要查看科学预测本身。
+
+| 本次搜索结果 | 相关性 | 原文值得看什么 |
+| --- | --- | --- |
+| [EarthArXiv 上关于极端厄尔尼诺事件的预印本](https://eartharxiv.org/repository/view/14692/) | 98/100 | 2026–27 年预测基于哪些假设。 |
+| [SSRN 上关于太平洋岛国应对厄尔尼诺的论文](https://www.ssrn.com/abstract=7689802) | 95/100 | 岛国如何规划基础设施、人手和预算。这一条需要手动导入正文。 |
+| [The Conversation 对“超级厄尔尼诺”预测不确定性的解读](https://theconversation.com/a-super-el-nino-why-its-too-early-to-forecast-one-with-certainty-but-not-too-soon-to-prepare-282574) | 95/100 | 在事件强度仍不确定时，怎样报道各地的准备工作。 |
+
+对可读取正文的结果，点击 **Add to Source** 加入素材库。对提示手动导入的结果，打开原文，通过 **Paste article text** 粘贴可以访问的正文。
+
+要把范围缩小到本篇报道关注的两个经济体，可以接着搜索下面这个问题。
 
 > If El Niño develops in 2027, which economic indicators should Pacific Rim reporters track? Find historical evidence on Peruvian fisheries and Indonesian agriculture.
 
 ![Research 中针对秘鲁渔业和印尼农业输入的英文检索问题](docs/images/first-story/05-research.png)
 
-先看 **Recommended** 结果，打开原文核对，再点 **Add to Source**。已有材料可在 **Source library** 通过 **Paste text**、**Upload files** 或 **Add a web link** 导入。图中两条是根据以下公开资料整理后粘贴的英文笔记：
+为了比较秘鲁和印尼，作者另外选取了两份历史资料，整理成笔记加入素材库。跟做时，打开 **Source library**，用 **Paste text** 粘贴笔记并附上原文链接。已有文档和网页也可以通过 **Upload files** 或 **Add a web link** 导入。
 
 - 秘鲁案例关注鳀鱼捕捞量如何影响鱼粉供应。FAO 在回顾 2023 年的产量变化时，将全球鱼粉减产主要归因于秘鲁鳀鱼捕捞不佳。[FAO 鱼粉市场回顾](https://www.fao.org/in-action/globefish/news-events/news/news-detail/2024-fishmeal-exports-bounce-back--china-dominates-imports--fish-oil-trade-declines/en)
 - 印尼案例关注干旱如何影响农业。研究者在 IMF《Finance & Development》撰文，讨论了以往厄尔尼诺时期的干旱及其对印尼农业的影响。[IMF：El Niño: Good Boy or Bad?](https://www.elibrary.imf.org/abstract/journals/022/0053/001/article-A010-en.xml)
