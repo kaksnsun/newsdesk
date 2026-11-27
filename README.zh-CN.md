@@ -90,6 +90,10 @@ Newsdesk 是一款基于 **Tiiny Pocket** 的本地新闻写作应用。你可�
 
 ![Research 中针对秘鲁渔业和印尼农业输入的英文检索问题](docs/images/first-story/05-research.png)
 
+![Research 结果页中的推荐文章，以及第一篇文章相关性得分 98 的理由](docs/images/first-story/07-research-results.png)
+
+*在已保存的“2027 El Niño”搜索中，53 条结果里有 8 条获推荐，其中 7 条可读取全文。展开相关性分数，就能看到一篇文章为什么与选题匹配。*
+
 为了比较秘鲁和印尼，作者另外选取了两份历史资料，整理成笔记加入素材库。跟做时，打开 **Source library**，用 **Paste text** 粘贴笔记并附上原文链接。已有文档和网页也可以通过 **Upload files** 或 **Add a web link** 导入。
 
 - 秘鲁案例关注鳀鱼捕捞量如何影响鱼粉供应。FAO 在回顾 2023 年的产量变化时，将全球鱼粉减产主要归因于秘鲁鳀鱼捕捞不佳。[FAO 鱼粉市场回顾](https://www.fao.org/in-action/globefish/news-events/news/news-detail/2024-fishmeal-exports-bounce-back--china-dominates-imports--fish-oil-trade-declines/en)
