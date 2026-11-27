@@ -83,6 +83,10 @@ To narrow the search to the two economies in this story, try the following quest
 
 ![Research with a question about Peruvian fisheries and Indonesian agriculture ready to search](docs/images/first-story/05-research.png)
 
+![Research results showing the recommended articles and the expanded explanation for a relevance score of 98](docs/images/first-story/07-research-results.png)
+
+*In the saved search for “2027 El Niño”, Newsdesk recommended 8 of 53 results and could read the full text of 7. Expand a relevance score to see why an article matched the query.*
+
 For the Peru–Indonesia comparison, the author separately added two historical sources as notes. To follow along, open **Source library**, choose **Paste text** and include the source link in each note. You can also use **Upload files** or **Add a web link**.
 
 - **Peru.** FAO linked the drop in global fishmeal production in 2023 mainly to poor Peruvian anchoveta catches. That gives the story a concrete indicator to track. [FAO fishmeal market review](https://www.fao.org/in-action/globefish/news-events/news/news-detail/2024-fishmeal-exports-bounce-back--china-dominates-imports--fish-oil-trade-declines/en)
