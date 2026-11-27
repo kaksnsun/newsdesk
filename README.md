@@ -65,13 +65,25 @@ Open the gear menu and select **Settings → Models**. Under **Language model**,
 
 ### 2. Create a project and collect evidence
 
-On the home page, select **Start writing** and name your project **El Niño in 2027: Pacific Rim economies**. Open **Research**, enter the question below and select **Start search**.
+On the home page, select **Start writing** and name your project **El Niño in 2027: Pacific Rim economies**. Open **Research**, enter `2027 El Niño` and select **Start search**.
+
+In one saved search, Newsdesk returned **53 results**. It recommended **8** and could read the full text of **7** of those eight. Start with **Recommended** and open the original articles. The model scores how closely each title and snippet fits your query. Use that score to choose what to read first. The likelihood of El Niño in 2027 is a separate scientific question.
+
+| Result from this search | Relevance | What to look for |
+| --- | --- | --- |
+| [EarthArXiv preprint on exceptional El Niño events](https://eartharxiv.org/repository/view/14692/) | 98/100 | The assumptions behind the 2026–27 forecast. |
+| [SSRN paper on Pacific Island preparedness](https://www.ssrn.com/abstract=7689802) | 95/100 | How island communities might plan infrastructure, staffing and budgets. This result required manual text import. |
+| [The Conversation on uncertainty around a “super El Niño”](https://theconversation.com/a-super-el-nino-why-its-too-early-to-forecast-one-with-certainty-but-not-too-soon-to-prepare-282574) | 95/100 | How to discuss preparedness while the strength of a future event is uncertain. |
+
+When a result has readable text, select **Add to Source** to keep it. For a result marked for manual import, open the original and use **Paste article text** to add the text you can access.
+
+To narrow the search to the two economies in this story, try the following question.
 
 > If El Niño develops in 2027, which economic indicators should Pacific Rim reporters track? Find historical evidence on Peruvian fisheries and Indonesian agriculture.
 
 ![Research with a question about Peruvian fisheries and Indonesian agriculture ready to search](docs/images/first-story/05-research.png)
 
-Research uses your model to rewrite queries and rank results. Start with **Recommended**, check the original article and select **Add to Source** to keep it. To bring your own material, open **Source library** and choose **Paste text**, **Upload files** or **Add a web link**. To follow this example, paste a short note from each of these sources and include its link.
+For the Peru–Indonesia comparison, the author separately added two historical sources as notes. To follow along, open **Source library**, choose **Paste text** and include the source link in each note. You can also use **Upload files** or **Add a web link**.
 
 - **Peru.** FAO linked the drop in global fishmeal production in 2023 mainly to poor Peruvian anchoveta catches. That gives the story a concrete indicator to track. [FAO fishmeal market review](https://www.fao.org/in-action/globefish/news-events/news/news-detail/2024-fishmeal-exports-bounce-back--china-dominates-imports--fish-oil-trade-declines/en)
 - **Indonesia.** Researchers writing in the IMF’s *Finance & Development* discuss how drought affected Indonesian agriculture during past El Niño episodes. [El Niño: Good Boy or Bad?](https://www.elibrary.imf.org/abstract/journals/022/0053/001/article-A010-en.xml)
